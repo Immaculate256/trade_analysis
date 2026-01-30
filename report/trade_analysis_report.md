@@ -6,35 +6,33 @@ This paper examines the evolution of global trade dynamics analyzing data for 21
 
 First, volatility persistence has reached financial market levels, the GARCH estimates reveal goods exports volatility exhibits near unit root persistence (α+β = 0.93), indicating that shocks decay slowly with long lasting effects, this is supported by a realized volatility year to year persistence of 0.63. Service goods exports show an integrated GARCH process (β = 1.0000) indicating permanent volatility shocks. Trade volatility increased 87.4% post 2008 while GDP volatility decreased 21.4%, creating an unprecedented volatility gap.
 
-Second, Trade-GDP linkages have weakened structurally, Rolling correlation analysis shows that trade and GDP shocks shifted from -0.40 pre 2008 to -0.06 post 2008 indicating a -0.34 point decline confirmed by Chow testing (F=15.4, p=0.00). Crisis responses show remarkable heterogeneity, ranging from extreme synchronization during the Global Financial Crisis (2009 correlation: -0.89) to partial decoupling during the COVID-19 pandemic (2020: -0.42).
+Second, Trade-GDP linkages have weakened structurally, Rolling correlation analysis shows that trade and GDP shocks shifted from -0.40 pre 2008 to -0.06 post 2008 indicating a -0.34 point decline confirmed by Chow testing (F=15.4, p=0.03). Crisis responses show remarkable heterogeneity, ranging from extreme synchronization during the Global Financial Crisis (2009 correlation: -0.89) to partial decoupling during the COVID-19 pandemic (2020: -0.42).
 
-Third, we identify an inverted U relationship between trade openness and crisis resilience, Optimal crisis outcomes occur at moderate trade openness (30-60% of GDP), with both lower and higher openness increasing vulnerability. Service dominant economies exhibit superior crisis performance (-1.11% average GDP impact versus -1.39% for goods-dominant), suggesting services trade offers stability alongside growth.
+Third, we identify an inverted U relationship between trade openness and crisis resilience, Optimal crisis outcomes occur at moderate trade openness (30-60% of GDP), with both lower and higher openness increasing vulnerability. Service dominant economies exhibit superior crisis performance (-1.20% average GDP impact versus -1.81% for goods-dominant), suggesting services trade offers stability alongside growth.
 
 Fourth, Random Effects regression reveal that GDP growth remains the primary driver of exports (elasticity $`\approx \ `$<!-- -->0.65), while inflation consistently reduces export performance. Exchange rate levels have no significant effect on total exports(p=0.83). however, exchange rate volatility significantly reduces goods exports (β =-7.837e-06, p =0.04) but has no effect on services p=0.64), confirming a dual trade system.
 
 These findings challenge constant parameter trade models and have immediate policy implications: openness strategies should target optimal rather than maximal levels, stabilization frameworks require longer horizons given volatility persistence, and services development can enhance both growth and stability. Our results establish that understanding time-varying dynamics is essential for navigating the recomposed globalization of the 21st century.
 
+# 1. INTRODUCTION:
 
-#  1. INTRODUCTION:
-
-## 1.1 Trade Integration and Structural Instability 
+## 1.1 Trade Integration and Structural Instability
 
 The period from 1990 to the mid-2000s has been labelled an era of hyper globalization. It was characterized by the rise of global value chains (GVCs), rapid trade liberalization, expanding trade volumes and falling costs of trade (Rodrik ,2eng018). Using instrumental variables to address endogeneity, Frankel and Romer (1999) estimated that a 1% increase in trade openness raised income per capita by roughly 0.5-2%. This finding become a basis of development policy, justifying various aspects from WTO accession to structural adjustment programs. Yet the consensus began to take shape only after 2008.
 
 The 2008 Global Financial Crisis triggered the so called ‘Great Trade Collapse’, this was defined by a structural break and a temporary contraction in the trade and growth linkage which never fully recovered their prior expansionary phase relative to output. (Freund 2009). Subsequent shocks as shown in Figure 1, notably, the US-China trade war (2018-2020), Covid19 pandemic induced supply disruptions and geopolitical realignments further exposed the fragile nature of deeply integrated systems. Currently, global trade is characterized by significant volatility, where risks emerge from within the system itself and its connection to macroeconomic fundamentals is not fixed
 
+<figcaption><p><span id="_Toc220421947" class="anchor"></span>Figure 1: Global Trade -GDP Growth Differential (Exports Growth-GDP Growth), 1990-2024</p></figcaption>
 <figure>
 <img src="images/media/image1.png" style="width:6.26389in;height:3.10417in" />
-<figcaption><p><span id="_Toc220421947" class="anchor"></span>Figure 1: Global Trade -GDP Growth Differential (Exports Growth-GDP Growth), 1990-2024</p></figcaption>
+
 </figure>
-
-Annual global average of (export volume growth – GDP growth), computed across 213 countries as cross country mean for each year. Positive values indicate trade growing faster than output. Vertical lines mark major global shocks: 2008 (Global Financial Crisis), 2018(US-China trade war escalation) and the 2019 COVID pandemic
-
-Source: Authors calculations based on World Bank Development Indicators (World Bank,2024)
+<small><i>Annual global average of (export volume growth – GDP growth), computed across 213 countries as cross country mean for each year. Positive values indicate trade growing faster than output. Vertical lines mark major global shocks: 2008 (Global Financial Crisis), 2018(US-China trade war escalation) and the 2019 COVID pandemic
+Source: Authors calculations based on World Bank Development Indicators (World Bank,2024).</i></small>
 
 In finance, ignoring volatility dynamics leads to mis specified risk assessments and flawed policy prescriptions (Engle,2002). The same logic now applies to trade, the shocks and transformation in trade demand new analyses that move beyond static elasticities and constant variances to model time varying uncertainty, persistence and conditional dependence.
 
-##  1.2 The Gap Between Empirical Reality and Standard Models 
+## 1.2 The Gap Between Empirical Reality and Standard Models
 
 Much of the trade literature remains anchored in frameworks unsuitable for the volatility nature of trade despite mounting evidence of instability. Gravity models assume stable bilateral relationships and ignore time varying heteroskedasticity (Head & Mayer, 2014). Dynamic Stochastic General Equilibrium (DSGE) Open economy models impose constant trade elasticities and exogenous shock processes (Justiniano et al., 2011). Panel regressions treat coefficients as fixed across decades, masking structural evolution.
 
@@ -45,25 +43,22 @@ These approaches, while practical they can obscure a significant flaw. They fail
 2\. How have the conditional correlations between trade and GDP evolved, and what explains the apparent decoupling in recent years?
 
 3\. Are there systematic differences in volatility and resilience between goods and services, or across income groups?
-
-| Metric | Pre 2008 | Post 2008 | Change |
-|:---|:---|:---|:---|
-| Average trade volatility (5-year rolling std.dev.) | 0.06 | 0.112 | +87.4% |
-| Average GDP volatility (5-year rolling std.dev.) | 0.098 | 0.077 | -21.4% |
-| Dynamic correlation: Exports vs. GDP growth | -0.40 | -0.06 | +0.34 pts |
-| Trade- GDP growth differential(pp) | +2.29 | +3.94 | +1.65pp |
-| Crisis GDP impact (openness\>60% of GDP) | \- | -2.11% | worse than moderate openness |
-|  |  |  |  |
-
 <span id="_Toc220426103" class="anchor"></span>Table 1: Summary of Key Facts: Global Trade Dynamics Before and After the 2008 Global Financial Crisis
+| Metric                                             | Pre 2008 | Post 2008 | Change                       |
+|:-------------------------------------------------- |:-------- |:--------- |:---------------------------- |
+| Average trade volatility (5-year rolling std.dev.) | 0.06     | 0.112     | +87.4%                       |
+| Average GDP volatility (5-year rolling std.dev.)   | 0.098    | 0.077     | -21.4%                       |
+| Dynamic correlation: Exports vs. GDP growth        | -0.40    | -0.06     | +0.34 pts                    |
+| Trade- GDP growth differential(pp)                 | +2.29    | +3.94     | +1.65pp                      |
+| Crisis GDP impact (openness\>60% of GDP)           | \-       | -2.11%    | worse than moderate openness |
+|                                                    |          |           |                              |
 
-volatility measures are 5-year rolling standard deviations of annual growth rates. Dynamic correlation is the average time varying (DCC GARCH) correlation between export and GDP contraction during 2008-2009 for countries with trade openness above 60% of GDP.
-
-Source: Authors calculations based on World Development Indicators (World Bank,2024).
+<small><i>Volatility measures are 5-year rolling standard deviations of annual growth rates. Dynamic correlation is the average time varying (DCC GARCH) correlation between export and GDP contraction during 2008-2009 for countries with trade openness above 60% of GDP.
+Source: Authors calculations based on World Development Indicators (World Bank,2024).</i></small>
 
 The answers to these questions matter for both academic completeness and practical decision making. For policy makers, misjudging volatility persistence can lead to undercapitalized stabilization funds or ineffective countercyclical buffers. For businesses, assuming stable trade GDP linkages risks flawed supply chain design and for multilateral institutions, outdated models may misdiagnose the roots of trade stagnation.
 
-1.  Contributions
+## 1.3 Contributions
 
 The study therefore addresses these gaps through a comprehensive analysis of global trade dynamics from 1990 to 2024, using data from the World Banks’ World Development Indicators for 213 countries. Our contribution is threefold:
 
@@ -81,7 +76,7 @@ Fourth, service exports were identified as a trade stabilizer, service dominant 
 
 Theoretically, our findings challenge constant parameter assumptions in trade models and suggest the need for frameworks that account for time varying dynamics. The assumption of stable elasticities and exogenous volatility is untenable in a world where risk is endogenously amplified by financial integration, supply chain complexity, and policy uncertainty (IMF, 2023). The evidence of changing transmission mechanisms between trade and GDP, coupled with the extreme persistence of volatility, points toward a need for new theoretical frameworks
 
-##  1.3 Policy Relevance and Broader Implications 
+## 1.4 Policy Relevance and Broader Implications
 
 The analysis offers crucial insights for economic theory.
 
@@ -107,7 +102,7 @@ Recent work has begun to acknowledge heterogeneity in these elasticities. (Imbs 
 
 However, this literature has predominantly focused on shifts in first moment parameters i.e. the conditional mean, paying limited attention to changes in second moments i.e. conditional variance and covariance. Our study bridges this gap by modeling how both the magnitude (volatility) and co-movement (correlation) of trade with macroeconomic fundamentals have evolved over three decades.
 
-## 2.2 Volatility in International Economics: 
+## 2.2 Volatility in International Economics:
 
 Volatility modeling originated in finance with Engles (1982) ARCH and Bollerslevs (1986) GARCH models, they captured the tendency of financial shocks to cluster and persist. In macroeconomics, volatility research initially flourished in finance before extending to exchange rates (Andersen et al., 2003) and inflation (Stock & Watson, 2007). This was soon applied to macroeconomic variables. Blanchard and Simon (2001) documented the “Great Moderation” which was a secular decline in U.S. output volatility from the mid-1980s to 2007 attributed to better monetary policy (Stock & Watson, 2002) and inventory management (McConnell & Pérez-Quiros, 2000).
 
@@ -161,13 +156,13 @@ By addressing these gaps, we provide not just new empirical facts but a new anal
 
 # 3.0 DATA AND METHODOLOGY
 
-##  3.1 Data Sources and Construction 
+## 3.1 Data Sources and Construction
 
-###  3.1.1 Primary Data Source 
+### 3.1.1 Primary Data Source
 
 This study constructs a global panel annual data set from the World Bank’s World Development Indicators (WDI) database, covering 213 countries from 1990 to 2024. The dataset represents the most comprehensive publicly available source for harmonized global trade and macroeconomic statistics, ensuring cross country comparability, regional and income group classifications follow the World Banks official definitions enabling consistent subgroup analysis.
 
-###  3.1.2 Variable Selection 
+### 3.1.2 Variable Selection
 
 Our variable selection, detailed in Table 2 is guided to capture the multidimensional nature of trade. We prioritize indicators central to measuring trade volumes, composition, prices, and macroeconomic context.
 
@@ -210,7 +205,7 @@ Our variable selection, detailed in Table 2 is guided to capture the multidimens
 <td style="text-align: left;"></td>
 </tr>
 <tr>
-<td colspan="3" style="text-align: center;">Trade composition &amp; intensity</td>
+<td colspan="3" style="text-align: center;">Trade composition & intensity</td>
 </tr>
 <tr>
 <td style="text-align: left;">Exports growth</td>
@@ -230,7 +225,7 @@ Our variable selection, detailed in Table 2 is guided to capture the multidimens
 <tr>
 <td style="text-align: left;">High tech exports</td>
 <td style="text-align: left;">High-technology exports (% of manufactured exports)</td>
-<td style="text-align: left;">Dropped (missingness &gt; 50%)</td>
+<td style="text-align: left;">Dropped (missingness > 50%)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Exports gdp percent</td>
@@ -268,7 +263,7 @@ Our variable selection, detailed in Table 2 is guided to capture the multidimens
 <tr>
 <td style="text-align: left;">Tariff rate</td>
 <td style="text-align: left;">Tariff rate</td>
-<td style="text-align: left;">Dropped (missingness &gt; 50%)</td>
+<td style="text-align: left;">Dropped (missingness > 50%)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Exchange rate</td>
@@ -292,8 +287,10 @@ Our variable selection, detailed in Table 2 is guided to capture the multidimens
 
 Prior to the analysis we conducted a comprehensive audit of data quality. Table 3 summarizes the extent of missing observations for each indicator. This diagnostic step was critical for our methodology. The raw dataset exhibited 20.47% overall missing observations with temporal and cross-sectional concentration. High technology exports and tariff rates were excluded due to excessive missingness (\>50% coverage). This was done to preserve the integrity and balance of panel dataset.
 
+<span id="_Toc220426105" class="anchor"></span>Table 3: Missingness by Indicator
+
 | Variable name           | % Missing | Action   |
-|:------------------------|:----------|:---------|
+|:----------------------- |:--------- |:-------- |
 | hitech_exports_pct      | 66.79     | Dropped  |
 | tariff_rate             | 50.48     | Dropped  |
 | ict_service_exports_pct | 37.26     | Retained |
@@ -310,47 +307,42 @@ Prior to the analysis we conducted a comprehensive audit of data quality. Table 
 | exch_rate               | 7.16      | Retained |
 | gdp_usd                 | 6.47      | Retained |
 
-<span id="_Toc220426105" class="anchor"></span>Table 3: Missingness by Indicator
-
-Percentage of missing observations for each variable across all country year observations (N = 7455) sorted in descending order of missingness. Higher values indicate greater data sparsity:
-
-Source: Author’s calculations based on World Development Indicators (World Bank,2024).
+<small><i>Percentage of missing observations for each variable across all country year observations (N = 7455) sorted in descending order of missingness. Higher values indicate greater data sparsity:
+Source: Author’s calculations based on World Development Indicators (World Bank,2024).</i></small>
 
 Missingness was not random but exhibited distinct temporal and geographic patterns. Table 4 shows that gaps are concentrated in the early years of the sample and surprisingly 2024 probably because by the time the data was extracted from World bank API’s most countries had not reported the year’s economic data. Missingness was also more among smaller or fragile economies, a pattern visually conformed in accompanying figure 2. This systematic pattern justified our imputation strategy.
 
+<span id="_Toc220426106" class="anchor"></span>Table 4: Concentration of Missing observations
 | Top 5 Years with most missing data | Top 5 countries with the most missing data |
-|:---|:---|
-| 2024 (63.58%) | Korea, Dem. People's Rep (74.29) |
-| 1990 (35.56%) | British Virgin Islands (74.29) |
-| 1991 (34.32%) | Gibraltar (69.17) |
-| 1992 (32.05%) | St. Martin (French part) (67.37) |
-| 1993 (29.95%) | Liechtenstein (65.86) |
-|  |  |
+|:---------------------------------- |:------------------------------------------ |
+| 2024 (63.58%)                      | Korea, Dem. People's Rep (74.29)           |
+| 1990 (35.56%)                      | British Virgin Islands (74.29)             |
+| 1991 (34.32%)                      | Gibraltar (69.17)                          |
+| 1992 (32.05%)                      | St. Martin (French part) (67.37)           |
+| 1993 (29.95%)                      | Liechtenstein (65.86)                      |
+|                                    |                                            |
 
-<span id="_Toc220426106" class="anchor"></span>Table 4: Table 4: Concentration of Missing observations
-
-Share of missing data per country and per year calculated as the percentage of missing values across all indicators for each country. Based on 7,455 country year observations. Top 5 ranked by missingness share.
-
-Source: Data: World Development Indicators (World Bank,2024), Author’s computations.
+<small><i>Share of missing data per country and per year calculated as the percentage of missing values across all indicators for each country. Based on 7,455 country year observations. Top 5 ranked by missingness share.
+Source: Data: World Development Indicators (World Bank,2024), Author’s computations.</i></small>
 
 The five years with highest missingness were 1990 (38.2%), 1999 (22.1%), 1994 (20.8%), 2006 (18.9%), and 1993 (18.4%). Countries with poorest coverage included Zimbabwe (41% missing), Bhutan (38%), Namibia (36%), Sierra Leone (35%), and Solomon Islands (34%).
 
 For remaining variables, missing values were imputed using a country specific procedure: first backward fill (carrying last observation forward through time), then forward fill for any remaining gaps. This approach respects the longitudinal structure of the data, assumes continuity from the last observed value and minimizes the introduction of new statistical artifacts.
 
+<figcaption><p><span id="_Toc220426189" class="anchor"></span>Figure 2: Top Countries and Years with the Most Missing Data</p></figcaption>
 <figure>
 <img src="images/media/image2.png" style="width:6.49167in;height:2.89167in" />
-<figcaption><p><span id="_Toc220426189" class="anchor"></span>Figure 2: Top Countries and Years with the Most Missing Data</p></figcaption>
+
 </figure>
 
-Panel A: top countries by share of missing observation across all indicators. Panel B: top years by share of missing observations across all countries. Missingness share = (number of missing values/total values) 100%. Sample: 455 country year observations.
+<small><i> Missingness share = (number of missing values/total values)100%. 
+Source: Data: World Development Indicators (World Bank,2024), Author’s computations</i></small>
 
-Source: Data: World Development Indicators (World Bank,2024), Author’s computations
-
-###  3.1.4 Country Aggregation and Groupings 
+### 3.1.4 Country Aggregation and Groupings
 
 Global and regional aggregates were constructed as weighted averages using current GDP weights, ensuring that larger economies appropriately influence aggregate measures. All analyses were conducted at three levels: Global aggregate (GDP-weighted); Income groups (World Bank classifications: Low, Lower-middle, Upper-middle, High income); Regional groups (World Bank regions: Sub-Saharan Africa, East Asia & Pacific, Europe & Central Asia, Latin America & Caribbean, Middle East & North Africa, North America, South Asia).
 
-##  3.2 Variable Transformation and Descriptive Analysis 
+## 3.2 Variable Transformation and Descriptive Analysis
 
 ### 3.2.1 Transformation Strategy.
 
@@ -360,8 +352,10 @@ Table 5 presents the descriptive statistics (mean, standard deviation, skewness 
 
 These diagnostic results justify our data transformation approach; applying log returns to achieve stationarity for monetary series and using IHS transformation for skewed ratios to approximate normally and stabilize variances for robust parameter estimation.
 
+<span id="_Toc220426107" class="anchor"></span>Table 5: Descriptive Statistics Pre-Transformation
+
 | Variable Name           | Mean            | Std              | Skew  | Kurtosis |
-|:------------------------|:----------------|:-----------------|:------|:---------|
+|:----------------------- |:--------------- |:---------------- |:----- |:-------- |
 | inflation               | 50.75           | 420.40           | 28.82 | 1404.44  |
 | exch_rate               | 10822429.05     | 269533375\.21    | 24.87 | 616.67   |
 | exports_growth          | 6.17            | 33.29            | 14.19 | 291.36   |
@@ -377,44 +371,43 @@ These diagnostic results justify our data transformation approach; applying log 
 | net_trade_usd           | 1759074177.75   | 44734551047.92   | -7.80 | 157.74   |
 |                         |                 |                  |       |          |
 
-<span id="_Toc220426107" class="anchor"></span>Table 5: Descriptive Statistics Pre-Transformation
+<small><i>Source: Data: World Development Indicators (World Bank,2024), Author’s computations</i></small>
 
-Source: Data: World Development Indicators (World Bank,2024), Author’s computations
-
-1.  log returns for monetary variables
+1. log returns for monetary variables
 
 As seen in table 5, raw macroeconomic data often violates the stationarity and distributional assumptions of classical econometrics, risking spurious inference. We therefore took log returns $`r_{t} = \log\left( X_{t} \right) - log(X_{t - 1}`$) to yield approximate growth rates, these are economically interpretable as proportional changes. Most importantly this transformation indices stationarity, a prerequisite for valid inference (Hamilton,1994). Without it, spurious regression could falsely suggest stable trade growth links where none exist (Granger & Newbold,1974).
 
-2.  Inverse hyperbolic sine (IHS) transformation for skewed ratio variables
+2. Inverse hyperbolic sine (IHS) transformation for skewed ratio variables
 
 Initial distributions revealed significant non-normality (Table 5), highly skewed indicators violate normality assumption in GARCH and regression models.
 
-| Variable | Mean | Std | Skew | Kurtosis | Skew severity | Kurtosis severity |
-|:---|:---|:---|:---|:---|:---|:---|
-| ict_service_exports_pct | 6.11 | 8.47 | 3.27 | 12.88 | High | Extreme |
-| Inflation | 10.37 | 21.35 | 3.18 | 9.42 | High | Heavy tails |
-| gdp_usd_log_return | 0.10 | 0.27 | 3.03 | 16.21 | High | Extreme |
-| goods_exports_usd_log_return | 0.06 | 0.25 | 2.29 | 20.75 | High | Extreme |
-| gdp_growth | 2.95 | 6.39 | 1.76 | 34.29 | Moderate | Extreme |
-| exports_gdp_pct | 53.30 | 32.22 | 1.30 | 1.75 | Moderate | Normal |
-| service_exports_gdp_pct | 30.90 | 29.00 | 1.28 | 0.24 | Moderate | Normal |
-| service_exports_usd_log_return | 0.07 | 0.27 | 1.24 | 17.07 | Moderate | Extreme |
-| trade_openness_pct | 98.81 | 55.03 | 1.19 | 1.03 | Moderate | Normal |
-| log_exch_rate | 2.18 | 2.97 | 0.80 | 1.81 | Low | Normal |
-| exports_growth | 4.48 | 12.48 | 0.41 | 4.06 | Low | Heavy tails |
-| net_trade_usd_log_return | 0.06 | 0.69 | 0.03 | 2.34 | Low | normal |
-| gdp_pc_usd_log_return | 0.01 | 1.38 | 0.00 | -1.22 | Low | normal |
+<span id="_Toc220426108" class="anchor"></span>Table 6: Distribution Characteristics of variables after transformation
 
-<span id="_Toc220426108" class="anchor"></span>Table 6: **Distribution Characteristics of variables after transformation**
+| Variable                       | Mean  | Std   | Skew | Kurtosis | Skew severity | Kurtosis severity |
+|:------------------------------ |:----- |:----- |:---- |:-------- |:------------- |:----------------- |
+| ict_service_exports_pct        | 6.11  | 8.47  | 3.27 | 12.88    | High          | Extreme           |
+| Inflation                      | 10.37 | 21.35 | 3.18 | 9.42     | High          | Heavy tails       |
+| gdp_usd_log_return             | 0.10  | 0.27  | 3.03 | 16.21    | High          | Extreme           |
+| goods_exports_usd_log_return   | 0.06  | 0.25  | 2.29 | 20.75    | High          | Extreme           |
+| gdp_growth                     | 2.95  | 6.39  | 1.76 | 34.29    | Moderate      | Extreme           |
+| exports_gdp_pct                | 53.30 | 32.22 | 1.30 | 1.75     | Moderate      | Normal            |
+| service_exports_gdp_pct        | 30.90 | 29.00 | 1.28 | 0.24     | Moderate      | Normal            |
+| service_exports_usd_log_return | 0.07  | 0.27  | 1.24 | 17.07    | Moderate      | Extreme           |
+| trade_openness_pct             | 98.81 | 55.03 | 1.19 | 1.03     | Moderate      | Normal            |
+| log_exch_rate                  | 2.18  | 2.97  | 0.80 | 1.81     | Low           | Normal            |
+| exports_growth                 | 4.48  | 12.48 | 0.41 | 4.06     | Low           | Heavy tails       |
+| net_trade_usd_log_return       | 0.06  | 0.69  | 0.03 | 2.34     | Low           | normal            |
+| gdp_pc_usd_log_return          | 0.01  | 1.38  | 0.00 | -1.22    | Low           | normal            |
 
-Mean, standard deviation, skewness and kurtosis after variable transformation. Skew severity classified as: low (\<1), moderate (1-2), high (\>2). Kurtosis severity classified as normal (\<3), heavy tailed (3-10), extreme (\>10).
-
-Source: Data: World Development Indicators (World Bank,2024), Author’s computations
+<small><i>Mean, standard deviation, skewness and kurtosis after variable transformation. Skew severity classified as: low (\<1), moderate (1-2), high (\>2). Kurtosis severity classified as normal (\<3), heavy tailed (3-10), extreme (\>10).
+Source: Data: World Development Indicators (World Bank,2024), Author’s computations</i></small>
 
 The IHS transformation $`{IHS}_{(X)} = log(x + \sqrt{x^{2}} + 1)`$ is not arbitrary (Burbidge et al., 1988), it preserves zero values which is common in service exports for low income countries, the IHS therefore stabilizes variances. Economically this ensures that outliers reflect true features rather than statistical artifacts. The Inverse Hyperbolic Sine (IHS) transformation was applied to variables exhibiting high skewness (\>2) or extreme kurtosis (\>8), successfully normalizing distributions while preserving zero and negative values. (Table 7)
 
+<span id="_Toc220433942" class="anchor"></span>Table 7: Inverse Hyperbolic Sine Applied to Highly Skewed Variables
+
 | Variable                | Skewness | kurtosis | Outliers? |
-|:------------------------|:---------|:---------|:----------|
+|:----------------------- |:-------- |:-------- |:--------- |
 | ict_service_exports_pct | 0.21     | -0.48    | No        |
 | Inflation               | 0.21     | 0.33     | No        |
 | gdp_growth              | -1.15    | 0.51     | No        |
@@ -422,47 +415,42 @@ The IHS transformation $`{IHS}_{(X)} = log(x + \sqrt{x^{2}} + 1)`$ is not arbitr
 | service_exports_gdp_pct | 1.28     | 0.23     | No        |
 | trade_openness_pct      | 1.19     | 1.02     | No        |
 
-<span id="_Toc220433942" class="anchor"></span>Table 7: Inverse Hyperbolic Sine Applied to Highly Skewed Variables
+<small><i>IHS is applied to non -return variables with skewness \>=1. Log differenced variables were excluded form HIS treatment regardless of skewness as they are already variable stabilized: sample: N =7,455.
+Source: Data: World Development Indicators (World Bank,2024), Author’s computations</i></small>
 
-IHS is applied to non -return variables with skewness \>=1. Log differenced variables were excluded form HIS treatment regardless of skewness as they are already variable stabilized: sample: N =7,455.
-
-Source: Data: World Development Indicators (World Bank,2024), Author’s computations
-
-3.  Winsorization of extreme openness values
+3. Winsorization of extreme openness values
 
 A few countries (e.g. Singapore, Luxembourg) report trade openness greater than 200pp due to entrepot trade or financial intermediation. While real these values distort cross country averages, winsorizing at (0, 250) % retains their influence while preventing them from dominating volatility estimates, a trade-off between empirical accuracy and analytical tractability (Chen & Ravallion,2010).
 
-### 3.2.2. Stationarity Testing 
+### 3.2.2. Stationarity Testing
 
 The assumption of stationarity is the foundation of casual interpretation, non-stationary series can appear correlated even when unrelated (Phillips,1986), to avoid this we apply dual unit root tests. This two-sided approach mitigates the risk of false stabilization and over differencing which introduces artificial dynamics. Our findings in Table 8 show that all key variables are stationary in growth rates except inflation this validates the use of level-based elasticity models only if co-integration holds (Engle & Granger,1987). Since we focus on short to medium run dynamics i.e. volatility and crisis response, to avoid the complexities of cointegration, we conduct our analysis using stationary growth rates.
-
-| Variable | ADF statistic | ADF p_value | KPSS statistic | KPSS p_value | stationary |
-|:---|:---|:---|:---|:---|:---|
-| exports_gdp_pct | -8.71 | 0.00 | 0.25 | 0.10 | Yes |
-| exports_growth | -8.81 | 0.00 | 0.30 | 0.10 | Yes |
-| service_exports_gdp_pct | -7.41 | 0.00 | 0.11 | 0.10 | Yes |
-| trade_openness_pct | -8.58 | 0.00 | 0.20 | 0.10 | Yes |
-| ict_service_exports_pct | -11.41 | 0.00 | 0.27 | 0.10 | Yes |
-| gdp_growth | -12.56 | 0.00 | 0.09 | 0.10 | Yes |
-| Inflation | -7.43 | 0.00 | 0.87 | 0.01 | No |
-| service_exports_usd_log_return | -14.98 | 0.00 | 0.16 | 0.10 | Yes |
-| net_trade_usd_log_return | -16.66 | 0.00 | 0.16 | 0.10 | Yes |
-| goods_exports_usd_log_return | -26.88 | 0.00 | 0.10 | 0.10 | Yes |
-| gdp_usd_log_return | -11.36 | 0.00 | 0.25 | 0.10 | Yes |
-| gdp_pc_usd_log_return | -16.73 | 0.00 | 0.25 | 0.10 | Yes |
-| log_exch_rate | -9.54 | 0.00 | 0.38 | 0.09 | Yes |
-
 <span id="_Toc220426110" class="anchor"></span>Table 8: Results of ADF and KPSS tests
 
-Variables tested using Augmented Dickey Fuller (ADF: Autolag =AIC) and KPSS (regression =’c’, lags = auto). A variable is classified as stationary only if ADF p value \<0.05 and KPSS p value \>0.05: sample: N =7,455.
+| Variable                       | ADF statistic | ADF p_value | KPSS statistic | KPSS p_value | stationary |
+|:------------------------------ |:------------- |:----------- |:-------------- |:------------ |:---------- |
+| exports_gdp_pct                | -8.71         | 0.00        | 0.25           | 0.10         | Yes        |
+| exports_growth                 | -8.81         | 0.00        | 0.30           | 0.10         | Yes        |
+| service_exports_gdp_pct        | -7.41         | 0.00        | 0.11           | 0.10         | Yes        |
+| trade_openness_pct             | -8.58         | 0.00        | 0.20           | 0.10         | Yes        |
+| ict_service_exports_pct        | -11.41        | 0.00        | 0.27           | 0.10         | Yes        |
+| gdp_growth                     | -12.56        | 0.00        | 0.09           | 0.10         | Yes        |
+| Inflation                      | -7.43         | 0.00        | 0.87           | 0.01         | No         |
+| service_exports_usd_log_return | -14.98        | 0.00        | 0.16           | 0.10         | Yes        |
+| net_trade_usd_log_return       | -16.66        | 0.00        | 0.16           | 0.10         | Yes        |
+| goods_exports_usd_log_return   | -26.88        | 0.00        | 0.10           | 0.10         | Yes        |
+| gdp_usd_log_return             | -11.36        | 0.00        | 0.25           | 0.10         | Yes        |
+| gdp_pc_usd_log_return          | -16.73        | 0.00        | 0.25           | 0.10         | Yes        |
+| log_exch_rate                  | -9.54         | 0.00        | 0.38           | 0.09         | Yes        |
 
-Source: Data: World Development Indicators (World Bank,2024), Author’s computations
+<small><i>Variables tested using Augmented Dickey Fuller (ADF: Autolag =AIC) and KPSS (regression =’c’, lags = auto). A variable is classified as stationary only if ADF p value \<0.05 and KPSS p value \>0.05: sample: N =7,455.
+Source: Data: World Development Indicators (World Bank,2024), Author’s computations</i></small>
 
-##  3.3 Econometric Framework 
+## 3.3 Econometric Framework
 
 Our analytical pipeline progresses from descriptive diagnostics to advanced volatility modelling.
 
-###  3.3.1 Volatility Modeling: GARCH Framework 
+### 3.3.1 Volatility Modeling: GARCH Framework
 
 Traditional trade models treat shocks as exogenous and homoscedastic an assumption challenged by the 2008 global financial cris. To model endogenous, time varying risk, we adopt the GARCH framework pioneered by (Engle,1982, Bollerslev,1986) but under-utilized in trade economics. Because trade volatility isn’t random and global shocks cluster and persist ignoring this leads to underestimated value at risk for policy makers; biased standard errors in regression and misguided stabilization policies. GARCH therefore balances simplicity and flexibility
 
@@ -492,13 +480,13 @@ Measures computed were: Rolling standard deviation (volatility); Rolling correla
 
 For volatility specifically:
 
-``` math
+```math
 Rolling\ volatility = \ \sqrt{\frac{1}{w - 1}\sum_{i = t - w + 1}^{t}{(r_{i} - {\overline{r}}_{w})}^{2}}
 ```
 
 Where w = 5 years rolling window and $`{\overline{r}}_{w}\ is\ the\ window\ mean`$
 
-###  3.3.2 Dynamic Conditional Correlation Analysis 
+### 3.3.2 Dynamic Conditional Correlation Analysis
 
 Time-varying correlations between trade and GDP shocks were estimated using a two-step procedure:
 
@@ -506,7 +494,7 @@ Step 1: Univariate GARCH
 
 Estimate GARCH (1,1) for each series, obtain standardized residuals:
 
-``` math
+```math
 z_{i,t} = \frac{\in_{i,t}}{\sigma_{i,t}}
 ```
 
@@ -514,13 +502,13 @@ Step 2: Rolling Correlation
 
 Compute correlations on standardized residuals using 5-year windows:
 
-``` math
+```math
 \rho_{12,t} = \frac{\sum_{i = t - w + 1}^{t}{z_{1,i}z_{2,i}}}{\sqrt{\sum_{}^{}z_{1,i}^{2}\ \sum_{}^{}z_{2,i}^{2}\ }}
 ```
 
 This approach isolates correlation dynamics from volatility changes, providing cleaner measures of shock interdependence.
 
-###  3.3.3 Panel Regression Specifications 
+### 3.3.3 Panel Regression Specifications
 
 Three complementary panel models were estimated to examine determinants of export performance:
 
@@ -544,104 +532,96 @@ FX Volatility: 5-year rolling standard deviation of exchange rate returns
 
 All models include annual time dummies to control for global shocks. By including log(gdp), inflation, exchange rate, trade openness and foreign exchange volatility we test core predictions of trade policy. We estimate separate models for goods and services acknowledging their distinct determinants (Lodefalk,2014). Pooling them would mask heterogeneity
 
-###  3.3.5 Additional Analytical Components 
+### 3.3.5 Additional Analytical Components
 
 1\. Proportional Growth Analysis: Trade-GDP growth differentials by:
 
-``` math
+```math
 {Gap}_{i,t} = {TradeGrowth}_{i,t} - {GDPGrowth}_{I,T}
 ```
 
 Aggregated globally and by income group.
 
-##  3.4 Software Implementation 
+## 3.4 Software Implementation
 
 All analyses were conducted in Python 3.9. Core libraries used, pandas (1.5.3) & numpy (1.24.3) for data manipulation. statsmodels (0.13.5) for ADF tests, OLS, panel regression. arch (5.3.0) for GARCH estimation and Engles test. linearmodels (4.27) for Panel regression with fixed effects. Visualizations were produced with matplotlib (3.7.1) and seaborn (0.12.2) using custom templates for publication quality figures. Code was developed in JupyterLab interface with parallel processing for country level computations. Full replication files are available via Git with reproducible environment specification
 
-#  4. EMPIRICAL RESULTS: ANALYSIS AND INTERPRETATION 
+# 4. EMPIRICAL RESULTS: ANALYSIS AND INTERPRETATION
 
-##  4.1 Structural Transformation in Global Trade (1990-2024): 
+## 4.1 Structural Transformation in Global Trade (1990-2024):
 
 Global trade dynamics have undergone a profound transformation since 1990. The period 1990 to 2008 was characterized by rapid expansion. Global trade to GDP ratio rose from 39% to 61% driven by Global Value Chain s(GVC) integration (Baldwin,2016), China’s accession to the WTO, and financial deepening that eased cross border transaction costs. During this phase, trade exhibited a stable, slightly proportional relationship with output, this is consistent with predictions that trade grows faster than GDP due to riding income elasticity of demand for tradables (Helpman & Krugman,1985)
 
 However, this trajectory reversed after the 2008 Global Financial Crisis, by 2024 the global trade to GDP ratio had stagnated near 60% while trade growth consistently lagged GDP growth, a phenomenon widely termed as trade slowdown (Constantinescu et al., 2019), our funding further show that the Global Financial Crisis of 2008 marked a structural break, confirmed by a Chow test (F = 15.4, p\<0.05), the pre and post crisis regimes are statistically distinct.
 
+<figcaption><p><span id="_Toc220433921" class="anchor"></span>Figure 3: Global Real GDP growth vs. Real Export Growth (excluding extreme hubs)</p></figcaption>
 <figure>
 <img src="images/media/image3.png" style="width:6.26667in;height:2.925in" />
-<figcaption><p><span id="_Toc220433921" class="anchor"></span>Figure 3: Global Real GDP growth vs. Real Export Growth (excluding extreme hubs)</p></figcaption>
+
 </figure>
 
-Annual average or real GDP growth and Real export growth, computed across 213 countries excluding extreme trade hubs by trade openness (e.g., Singapore, Luxembourg) vertical lines mark global shocks: 2008 GFC, 2018 trade wars, 2020 covid pandemic. The increasing divergence in post 2008 cycles particularly the muted export responses during recoveries reflects structural decoupling between trade and output.
-
-Source: Author’s calculation based on World Development indicators (World Bank, 2024)
+<small><i>Annual average or real GDP growth and Real export growth, computed across 213 countries excluding extreme trade hubs by trade openness (e.g., Singapore, Luxembourg) vertical lines mark global shocks: 2008 GFC, 2018 trade wars, 2020 covid pandemic. The increasing divergence in post 2008 cycles particularly the muted export responses during recoveries reflects structural decoupling between trade and output.Source: Author’s calculation based on World Development indicators (World Bank, 2024)</i></small>
 
 This reflects a deeper decoupling of trade from output driven by the exhaustion of easy GVC integration gains, rising geopolitical friction and a shift toward service led growth in advanced economies (Antràs, 2020, Freund,2020). Figure 3 illustrates this transformation using GDP and Trade growth averaged across 213 countries, excluding extreme trade hubs (e.g. Singapore, Luxembourg etc.) jurisdictions whose entrepot roles distort aggregate patterns.
 
 Before 2008, the gap between exports and GDP growth was narrow and relatively stable with exports typically outpacing GDP by 2 to 3 percentage points. However, after 2008, the relationship becomes volatile and asymmetric. During crises (Global Financial Crisis, US-China trade war and the 2020 pandemic) exports collapse more sharply than GDP, consistent with trade’s role as an amplifier of shocks through supply chain contagion (Levchenko et al.,2010).
 
+<figcaption><p><span id="_Toc220433922" class="anchor"></span>Figure 4 :Global Trade -GDP growth differential decomposition by World Bank income groups</p></figcaption>
 <figure>
 <img src="images/media/image4.png" style="width:6.25833in;height:3.10833in" />
-<figcaption><p><span id="_Toc220433922" class="anchor"></span>Figure 4 :Global Trade -GDP growth differential decomposition by World Bank income groups</p></figcaption>
-</figure>
 
-Annual average of the difference between real export growth and real GDP growth grouped by world bank income classification (high, upper middle, lower middle, low income). Crisis years (2008,2018,2020) show synchronized contractions across groups.
-
-Source: Author’s calculation based on World Development indicators (World Bank, 2024)
+<small><i>Annual average of the difference between real export growth and real GDP growth grouped by world bank income classification (high, upper middle, lower middle, low income). Crisis years (2008,2018,2020) show synchronized contractions across groups.
+Source: Author’s calculation based on World Development indicators (World Bank, 2024)</i></small>
 
 This global trend uncovers substantial heterogeneity across development stages. Figure 4 decomposes the trade-GDP growth differential by World Bank income groups and reveals that in 2024 upper middle-income economies are now the primary drivers of global trade growth. Upper middle-income economies still undergoing industrial upgrading (e g., Vietnam, Mexico, Turkey) sustain a robust trade premium averaging 3.83pp (Table 9). Low-income countries show renewed engagement(1.35pp) possibly reflecting digital trade opportunities or regional integration.
 
 In contrast, high income countries hover near parity(0.04pp), while lower middle-income nations actually exhibit trade underperformance(-0.58pp), likely due to infrastructural bottlenecks and premature deindustrialization (Rodrik,2008). The sharp post 2011 decline in the high-income trade premium (Figure 4) underscores a structural pivot toward non tradable services and in ward looking policy preferences
 
+<span id="_Toc220433944" class="anchor"></span>Table 9: Trade-GDP Growth Differential by Income Group (2024)
+
 | Income group        | Trade-GDP growth differential |
-|:--------------------|:------------------------------|
+|:------------------- |:----------------------------- |
 | High income         | 0.04                          |
 | Low income          | 1.35                          |
 | Lower middle income | -0.58                         |
 | Upper middle income | 3.83                          |
 
-<span id="_Toc220433944" class="anchor"></span>Table 9: Trade-GDP Growth Differential by Income Group (2024)
+<small><i>Cross sectional average of Trade-GDP differential in 2024, stratified by World Bank income groups. Positive values indicate export growth outpacing gdp growth; negative values indicate the reverse: sample;7,455 country year observations.
+Source: Author calculations from WDI data</i></small>
 
-Cross sectional average of Trade-GDP differential in 2024, stratified by World Bank income groups. Positive, values indicate export growth outpacing gdp growth; negative values indicate the reverse: sample;7,455 country year observations.
+The divergent paths are further seen in the changing returns to trade openness. Figure 5 plots the relationship between trade openness and the GDP growth in two regimes pre and post 2009. Before the GFC, the slope is steep and positive aligning with Sachs and Warner’s (1995) hypothesis that trade openness spurs growth through efficiency and competition. After 2009, the slope flattens and the correlation weakens from -0.40 to -0.06 in dynamic terms. This suggests that openness alone no longer guarantees growth dividends, without complementary institutions, diversification or stock buffers, high openness may even intensify vulnerabilities (WTO,2023). Indeed, our panel regressions confirm that while trade openness remains statistically significant(p\<0.05p), its marginal effect on export growth has diminished in magnitude and stability post crisis.
 
-Source: Author calculations from WDI data
-
-The divergent paths are further seen in the changing returns to trade openness. Figure 5 plots the relationship between trade openness and the GDP growth in two regimes pre and post 2009. Before the GFC, the slope is steep and positive aligning with Sachs and Warner’s (1995) hypothesis that trade openness spurs growth through efficiency and competition. After 2009, the slope flattens and the correlation weakens from -0.40 to -0.06 in dynamic terms. This suggests that openness alone no longer guarantees growth dividends, without complementary institutions, diversification or stock buffers, high openness may even intensify vulnerabilities (WTO,2023). Indeed, our panel regressions confirm that while trade openness remains statistically significant(p\<0.05), its marginal effect on export growth has diminished in magnitude and stability post crisis.
+<figcaption><p><span id="_Toc220433923" class="anchor"></span>Figure 5: Trade Openness Vs GDP Growth: Pre vs. Post GFC (1990-2024)</p></figcaption>
 
 <figure>
 <img src="images/media/image5.png" style="width:6.26667in;height:4.15833in" />
-<figcaption><p><span id="_Toc220433923" class="anchor"></span>Figure 5: Trade Openness Vs GDP Growth: Pre vs. Post GFC (1990-2024)</p></figcaption>
+
 </figure>
 
-Scatter plot of trade openness against the GDP growth with OLS lines fitted for pre 2009 vs post 2009 subsamples. Regime split based on structural break identified via Chow Test (F = 15.4, p=0.03):
-
-Source: Author calculations using WDI data
+<small><i>Scatter plot of trade openness against the GDP growth with OLS lines fitted for pre 2009 vs post 2009 subsamples. Regime split based on structural break identified via Chow Test (F = 15.4, p=0.03):
+Source: Author calculations using WDI data</i></small>
 
 ## 4.2. Services Trade Transformation
 
-Service trade was once dismissed as a non-tradable residual in international trade models (Baumon,1967), it has since emerged as a central pillar of global commerce reshaped by digitalization, shifting comparative advantage and skill accumulation. Far from being passive, the service sector now exhibits distinct cyclical properties, structural momentum and crisis resilience that rival those of goods.
+Service trade was once dismissed as a non-tradable residual in international trade models (Baumol,1967), it has since emerged as a central pillar of global commerce reshaped by digitalization, shifting comparative advantage and skill accumulation. Far from being passive, the service sector now exhibits distinct cyclical properties, structural momentum and crisis resilience that rival those of goods.
 
 Using a comprehensive panel of 213 countries over 1990-2024, this analysis reveals that services are no longer a passive residual but an active and strategic component of global trade. The results in Table 10 reveal that only 50 countries (23%) are service dominant, while 163 (77%) remain goods dominant, however, economies with service dominant export structures demonstrated superior resilience with milder GDP declines and notably more stable export performance. As shown in figure 10, service dominance is concentrated in high income economies which consistently maintain service shares above 32% of total exports.
-
-| Export Composition | N_Countries | % of sample | Avg.GDP crisis Impact | Avg.Export Crisis impact |
-|:---|:---|:---|:---|:---|
-| Goods dominant | 163 | 76.5% | -1.81 | -3.94 |
-| Services dominant | 50 | 23.5% | -1.20 | -1.11 |
-
 <span id="_Toc220433945" class="anchor"></span>Table 10: Export composition and Crisis Resilience
+| Export Composition | N_Countries | % of sample | Avg.GDP crisis Impact | Avg.Export Crisis impact |
+|:------------------ |:----------- |:----------- |:--------------------- |:------------------------ |
+| Goods dominant     | 163         | 76.5%       | -1.81                 | -3.94                    |
+| Services dominant  | 50          | 23.5%       | -1.20                 | -1.11                    |
 
-Countries classified as service dominant (\>50% services in pre- crisis total exports) or goods dominant (\<50%) during crisis period (2008-2009) based on 213 countries.
-
-Source: Author calculations using WDI data
-
+<small><i>Countries classified as service dominant (\>50% services in pre- crisis total exports) or goods dominant (\<50%) during crisis period (2008-2009) based on 213 countries.
+                                                                               Source: Author calculations using WDI data</i></small>
 Figure 6 shows the global share of services in total exports from 1990 to 2024. The series reveal a secular upward trend defined by sharp volatility, notable contractions in 1995(post Mexican peso crisis), 2000(dot com bust), 2011(Eurozone debt turmoil) and the 2021 supply chain distortions.
 
 <span id="_Toc220433924" class="anchor"></span>Figure 6: Global Service Share in Total Exports (1990-2024)
 
 <img src="images/media/image6.png" style="width:6.26667in;height:3.10833in" />
 
-Annual cross country means of services share (service exports/total exports 100). Unweighted average across countries. Sample: N = 7,455 country year observations.
-
-Source: Author calculations using WDI data
+<small><i>Annual cross country means of services share (service exports/total exports 100). Unweighted average across countries. Sample: N = 7,455 country year observations.
+Source: Author calculations using WDI data</i></small>
 
 The 2009 surge amid the deepest global recession in decades is particularly telling, while goods trade collapsed by over 12% globally, digitally enabled services like IT outsourcing, business process services proved more resilient, even countercyclical in some economies. This pattern contradicts the traditional view of services as inherently non tradable and highlights the role of digital tradability in decoupling service exports from physical logistics constraints (Lopez & Jouanjean, 2017).
 
@@ -649,14 +629,14 @@ This transformation is not uniform across development stages. Figure 7 decompose
 
 Unlike goods which can be can be produced by unskilled labor and basic logistics, high value service exports demand advanced education, regulatory quality and connectivity, which are advantages concentrated in advanced economies. The persistent gap between service share to total exports amongst income groups points to the fact that digital globalization has not yet leveled the playing field, it may reinforce the existing divides unless accompanied by targeted investment in human and digital capital.
 
+<figcaption><p><span id="_Toc220433925" class="anchor"></span>Figure 7: Global: Service share in Total Exports by Income Group (1990-2024)</p></figcaption>
 <figure>
 <img src="images/media/image7.png" style="width:6.26528in;height:3.10625in" />
-<figcaption><p><span id="_Toc220433925" class="anchor"></span>Figure 7: Global: Service share in Total Exports by Income Group (1990-2024)</p></figcaption>
+
 </figure>
 
-Annual cross country mean of services share (service exports/total exports 100) computed separately for each World Bank Income Group. Unweighted average across countries. Sample: N= 7,455 country year observations.
-
-Source: Author calculations using WDI data
+<small><i>Annual cross country mean of services share (service exports/total exports 100) computed separately for each World Bank Income Group. Unweighted average across countries. Sample: N= 7,455 country year observations.
+Source: Author calculations using WDI data</i></small>
 
 ### 4.2.1 ICT Service Contribution
 
@@ -664,14 +644,14 @@ This divergence across income groups is largely driven by differential adoption 
 
 Conversely, it became a significant drag during crisis years most notably in 2020 (-2.39 pp), when global digital service demand contracted amid recessionary pressures, and again in 2009 (-0.34 pp) and 2015 (-0.31 pp). this pattern reflects two forces; first, the skill biased nature of ICT services which concentrates gains in human capital rich economies (Autor et la.,1998); second, the high-income elasticity of digitally delivered services, which renders them procyclical despite low trade costs (Hoekman & Mattoo,2021). Far from being a stabilizing force, ICT enabled trade thus amplifies both booms and busts, reinforcing the advantage of economies that can smooth these cycles through diversified service portfolios.
 
+<figcaption><p><span id="_Toc220433926" class="anchor"></span>Figure 8: Global ICT contribution to Service Exports Growth (1990-2024)</p></figcaption>
 <figure>
 <img src="images/media/image8.png" style="width:6.26528in;height:3.10625in" />
-<figcaption><p><span id="_Toc220433926" class="anchor"></span>Figure 8: Global ICT contribution to Service Exports Growth (1990-2024)</p></figcaption>
+
 </figure>
 
-Annual cross country means of ICT’s contribution to service export growth, computed as (ICT share of service exports) (annual service export growth rate. Values represent percentage points contributions. Sample: N = 7,455
-
-Source: Author calculations using WDI data
+<small><i>Annual cross country means of ICT’s contribution to service export growth, computed as (ICT share of service exports) (annual service export growth rate. Values represent percentage points contributions. Sample: N = 7,455
+Source: Author calculations using WDI data</i></small>
 
 Collectively, these findings challenge the prevailing theoretical framework. Services are no longer the residual sector but an active driver of trade dynamics, shaped by digital technology, human capital and evolving demand. Their rise redefines the concept of comparative advantage and challenges policy makers to invest in digital infrastructure, skills and regulatory frameworks that enable service led growth
 
@@ -684,20 +664,17 @@ Yet our analysis of 213 countries over 1990-2024 reveals that this convergence h
 A striking indicator of this shift is the rising dispersion in trade openness across nations. As shown in Table 11, the standard deviation of trade openness (% of GDP) across 213 countries surged from 64.3 in 2007 to 77.9 in 2008, the peak year of financial globalization and remained elevated thereafter (69.7 in 2011, 64.3 in 2010). This contrasts sharply with the 1990s, when dispersion gradually narrowed.
 
 The Chow test confirms a structural break at 2009 (F = 15.4, p \< 0.01), marking the end of the convergence regime. Critically, this divergence is not random, it aligns with endogenous trade policy models (Maggi & Rodriguez,2007). The analysis further shows that global average openness leveled off around 60% after 2008, but this masks a divergence, a small set of hyper-globalized hubs pulled the mean upward, while the majority of countries either stagnated or retreated.
-
+<span id="_Toc220433946" class="anchor"></span>Table 11: Top 5 years with the highest trade openness dispersion
 | Year | Count | Std.dev. |
-|:-----|:------|:---------|
+|:---- |:----- |:-------- |
 | 2008 | 213   | 77.87    |
 | 2011 | 213   | 69.66    |
 | 2006 | 213   | 64.73    |
 | 2010 | 213   | 64.43    |
 | 2007 | 213   | 64.32    |
 
-<span id="_Toc220433946" class="anchor"></span>Table 11: Top 5 years with the highest trade openness dispersion
-
-Top 5 years ranked by standard deviation of trade openness. Only years with \> 50 countries observed included. Dispersion reflects systemic divergence in integration levels. Sample: N=7,455 country year observations.
-
-Source: Author calculations using WDI data
+<small><i>Top 5 years ranked by standard deviation of trade openness. Only years with \> 50 countries observed included. Dispersion reflects systemic divergence in integration levels. Sample: N=7,455 country year observations.
+Source: Author calculations using WDI data</i></small>
 
 This divergence is fundamentally regional. Figure 9 plots the evolution of average trade openness by World Bank region and reveals divergent paths and distinct regional models of integration each shaped by structural characteristics, policy choices, and institutional endowments. East Asia & Pacific, Europe & Central Asia, Middle East & North Africa.
 
@@ -715,36 +692,34 @@ North America presents a paradox: despite deep integration via United States Mex
 
 The persistence of these clusters unchanged even after 30 years of globalization suggests that trade openness is not converging toward a global norm, but diverging along institutional and geopolitical lines. Institutions tend to determine whether openness yields gains or volatility (Levchenko,2007). economic scale inversely affects trade to GDP ratios and state strategy mediates global pressures and domestic priorities (Rodrik,2011)
 
+<figcaption><p><span id="_Toc220433927" class="anchor"></span>Figure 9: Evolution of Trade Openness by Region (1990-2024)</p></figcaption>
 <figure>
 <img src="images/media/image9.png" style="width:6.34167in;height:3.67682in" />
-<figcaption><p><span id="_Toc220433927" class="anchor"></span>Figure 9: Evolution of Trade Openness by Region (1990-2024)</p></figcaption>
+
 </figure>
 
-Annual regional trade averages of trade openness (% of GDP), computed as unweighted cross country means within each region. Sample: N=7,455 country year observations.
-
-Source: Author calculations using WDI data
+<small><i>Annual regional trade averages of trade openness (% of GDP), computed as unweighted cross country means within each region. Sample: N=7,455 country year observations.
+Source: Author calculations using WDI data</i></small>
 
 ## 4.4. Crisis Resilience Optimal Threshold
 
 Contrary to both protectionist and hyper-globalization theories, we find a non-linear relationship between trade openness and crisis resilience. Countries with trade openness below 60% of GDP suffered significantly milder GDP contractions during the 2008-2009 GFC (-0.77%) compared to more open economies (-2.11%, p\<0.05). This pattern holds across all tested thresholds (Table 12), with the worst outcomes concentrated among hyper open economies (\>100%), such nations experienced both deeper recessions and higher cross-country volatility (σ = 3.94)
-
-| Openness Category | N_Countries | Avg.GDP Impact (%) | Avg.Export Impact (%) | Interpretation |
-|:---|:---|:---|:---|:---|
-| Very low (\<30%) | 11 | -1.29 | -4.44 | Moderately resilient but highly volatile for exports |
-| Low (30-60%) | 59 | -0.67 | -2.29 | Optimal range. Best GDP resilience, moderate export shock |
-| Medium (60-100%) | 84 | -1.80 | -3.95 | Resilience declines as openness increases |
-| High (100-200%) | 51 | -2.60 | -2.75 | High GDP vulnerability but exports slightly more stable |
-| Very High (\>200%) | 8 | -2.13 | -5.17 | High vulnerability, extreme export volatility |
-|  |  |  |  |  |
-| Statistical Tests (Below vs Above Thresholds) |  |  |  |  |
-| \<60% vs. \>60% | t=3.12, p=0.033 | -0.77% | -2.11% | moderate openness performs significantly better |
-| \<100% vs.\>100% | t=2.18, p=0.033 | -1.33% | -2.54% | High openness linked to worse outcomes |
-
 <span id="_Toc220433947" class="anchor"></span>Table 12: Crisis Impact by Pre-Crisis Trade Openness Threshold (2008-2009)
 
-Countries grouped by pre crisis trade openness (% of GDP) using bins (\<30%, 30-60%,60-100%,100-200%,\>200%). openness is measured as average over pre crisis years. Crisis impact measured over 2008-2009. Sample: N=7,455 country year observations.
+| Openness Category                             | N_Countries     | Avg.GDP Impact (%) | Avg.Export Impact (%) | Interpretation                                            |
+|:--------------------------------------------- |:--------------- |:------------------ |:--------------------- |:--------------------------------------------------------- |
+| Very low (\<30%)                              | 11              | -1.29              | -4.44                 | Moderately resilient but highly volatile for exports      |
+| Low (30-60%)                                  | 59              | -0.67              | -2.29                 | Optimal range. Best GDP resilience, moderate export shock |
+| Medium (60-100%)                              | 84              | -1.80              | -3.95                 | Resilience declines as openness increases                 |
+| High (100-200%)                               | 51              | -2.60              | -2.75                 | High GDP vulnerability but exports slightly more stable   |
+| Very High (\>200%)                            | 8               | -2.13              | -5.17                 | High vulnerability, extreme export volatility             |
+|                                               |                 |                    |                       |                                                           |
+| Statistical Tests (Below vs Above Thresholds) |                 |                    |                       |                                                           |
+| \<60% vs. \>60%                               | t=3.12, p=0.033 | -0.77%             | -2.11%                | moderate openness performs significantly better           |
+| \<100% vs.\>100%                              | t=2.18, p=0.033 | -1.33%             | -2.54%                | High openness linked to worse outcomes                    |
 
-Source: Author calculations using WDI data
+<small><i>Countries grouped by pre crisis trade openness (% of GDP) using bins (\<30%, 30-60%,60-100%,100-200%,\>200%). openness is measured as average over pre crisis years. Crisis impact measured over 2008-2009. Sample: N=7,455 country year observations
+Source: Author calculations using WDI data</i></small>
 
 The above findings align with Rodrik’s (2018) concept of smart globalization where he argues that maximal openness is not universally beneficial, instead countries should regulate integration to their institutional capacity. In the absence of strong buffers such as deep financial markets, diversified financial markets, social safety nets or diversified production, high trade openness leads to extreme external shocks (Levchenko,2007). Without robust institutions, hyper integration undermines rather than enhances stability (Rodrik,2011).
 
@@ -752,18 +727,18 @@ Critically, the most resilient group isn’t the least open, but the moderately 
 
 The era of convergence assumed a single rules-based trading system. Today we see emerging geoeconomic blocs (WTO,2023), a US aligned bloc prioritizing friend shoring, a China centered bloc emphasizing infrastructure led integration and a Global South navigating between them. The results in the regional divergence and openness thresholds are early evidence of this realignment, where trade policy is no longer about efficiency alone, but about strategic autonomy and shock absorption.
 
-##  4.5. The Fragmentation of Global Trade Policy
+## 4.5. The Fragmentation of Global Trade Policy
 
 The retreat from convergence is not merely regional or threshold-based, it is systemic. The analysis reveals a fundamental decoupling between macroeconomic synchronization and trade policy divergence, captured in the evolving cross-country dispersion of GDP growth versus trade openness (Figure 10). From 1990 to 1998, GDP growth was more dispersed than trade openness, income trajectories diverged but trade policy converged under the Washington Consensus and post-Cold War liberalization wave (Williamson, 1990). However, this relationship inverted after 1998, trade openness became consistently more dispersed than GDP growth through 2019. This represents a move away from globalization driven uniformity in trade policy toward an era of strategic diversity
 
+<figcaption><p><span id="_Toc220433928" class="anchor"></span>Figure 10: Cross-Country Dispersion in GDP Growth vs. Trade Openness, 1990–2024</p></figcaption>
 <figure>
 <img src="images/media/image10.png" style="width:6.74792in;height:3.30833in" />
-<figcaption><p><span id="_Toc220433928" class="anchor"></span>Figure 10: Cross-Country Dispersion in GDP Growth vs. Trade Openness, 1990–2024</p></figcaption>
+
 </figure>
 
-Annual cross country Std.dev. of GDP and Interquartile range (IQR) of trade openness. Dispersion measures computed only for years with \>50 countries observed. Sample: N=7,455 country year observations.
-
-Source: Author calculations using WDI data
+<small><i>Annual cross country Std.dev. of GDP and Interquartile range (IQR) of trade openness. Dispersion measures computed only for years with \>50 countries observed. Sample: N=7,455 country year observations.
+Source: Author calculations using WDI data</i></small>
 
 This pattern aligns with endogenous trade policy models (Maggi & Rodríguez, 2007), which predict that as countries develop distinct institutional capacities and geopolitical alignments, their optimal openness levels diverge. The spike in trade dispersion during 2020 to 2021 while GDP dispersion fell further underscores this, the pandemic exposed asymmetric supply chain vulnerabilities, prompting nations to recalibrate openness based on resilience, not just efficiency (Baldwin, 2022). By 2022 through 2024, trade dispersion remained elevated, confirming that the shocks accelerated and not reversed fragmentation.
 
@@ -780,9 +755,9 @@ While most countries conform to a broad global relationship between income dynam
 The results in Table 13 reveal ten extreme outliers. Singapore leads with an average deviation of 260.9 percentage points, followed by Djibouti (242.5), San Marino (237.8), and Hong Kong SAR (237.0). These economies operate outside the standard trade-growth linkages that govern most of the world.
 
 These deviations reflect structural exceptionalism. For Singapore and Hong Kong, high residuals come from their roles as global logistics and financial intermediaries, their trade flows include re-exports, intra-firm transfers, and digital routing that bear little relation to domestic GDP. Djibouti’s deviation arises from its strategic position as a trans-shipment hub for East Africa, while Luxembourg and Ireland reflect Base Erosion and Profit Shifting (BEPS) driven distortions i.e. intellectual property shifting that inflate trade statistics without corresponding reals sector activity (Wier, 2019).
-
+<span id="_Toc220433948" class="anchor"></span>Table 13: Countries with Consistently Atypical Trade GDP Dynamics
 | Country              | Avg. Absolute Residual (pp) |
-|:---------------------|:----------------------------|
+|:-------------------- |:--------------------------- |
 | Singapore            | 260.89                      |
 | Djibouti             | 242.45                      |
 | San Marino           | 237.81                      |
@@ -794,11 +769,8 @@ These deviations reflect structural exceptionalism. For Singapore and Hong Kong,
 | Malta                | 100.51                      |
 | Ireland              | 88.45                       |
 
-<span id="_Toc220433948" class="anchor"></span>Table 13: Countries with Consistently Atypical Trade GDP Dynamics
-
-Countries ranked by mean absolute residuals from global OLS regression of trade openness on GDP growth. Residuals = actual – predicted trade openness. Only countries with \>10 years of data included. Sample: N = 7,455 country year observations.
-
-Source: Author calculations using WDI data
+<small><i>Countries ranked by mean absolute residuals from global OLS regression of trade openness on GDP growth. Residuals = actual – predicted trade openness. Only countries with \>10 years of data included. Sample: N = 7,455 country year observations.
+Source: Author calculations using WDI data</i></small>
 
 Critically, this behavior is institutionally embedded. As Rodrik (2018) observes, such jurisdictions succeed not through comparative advantage in production, but through comparative advantage in arbitrage exploiting regulatory, geographic, or fiscal gaps in the global system. Their institutions are optimized for global network efficiency, not domestic inclusivity (Acemoglu & Robinson, 2012).
 
@@ -808,14 +780,14 @@ These outliers have profound implications for how we measure globalization. Beca
 
 In summary, exceptions like Ireland and Luxembourg are better understood as features of divergent global economic order than as leaders of convergence. Their specific vulnerabilities highlight how even the highly efficient, specialized hubs are exposed to the pressures of strategic decoupling and shift toward resilience based national policies.
 
+<figcaption><p><span id="_Toc220433929" class="anchor"></span>Figure 11: Residuals of Trade Openness from GDP-Predicted Norm: Atypical Hubs</p></figcaption>
 <figure>
 <img src="images/media/image11.png" style="width:6.30833in;height:3.48333in" />
-<figcaption><p><span id="_Toc220433929" class="anchor"></span>Figure 11: Residuals of Trade Openness from GDP-Predicted Norm: Atypical Hubs</p></figcaption>
+
 </figure>
 
-Annual residuals (actual – predicted trade openness) from pooled OLS benchmark. Horizontal dashed line at zero denotes global norm. Sample: N=7,455 country year observations.
-
-Source: Author calculations using WDI data
+<small><i>Annual residuals (actual – predicted trade openness) from pooled OLS benchmark. Horizontal dashed line at zero denotes global norm. Sample: N=7,455 country year observations.
+Source: Author calculations using WDI data</i></small>
 
 Together, these patterns confirm that global trade isn’t converging toward a single trade model. Instead, it is diversifying into several distinct categories; a large group of moderately open economies operating with in established institutional constraints; a set of nations with more variable economic performance due to commodity dependence or limited policy space; and a small number of highly specialized jurisdictions whose distinct operational model faces specific vulnerabilities to systemic shifts.
 
@@ -892,21 +864,22 @@ Unlike trade which is exposed to global shocks, GDP benefits from spatial divers
 
 We validate the GARCH specification using Autocorrelation Functions (ACF) plots (Figure 12). Before GARCH filtering, the squared log returns of goods exports show strong significant autocorrelation up to lag 1(~0.5), decaying slowly to ~0.01 by lag 5, a clear evidence of volatility clustering. After standardising the series by GARCH estimated conditional volatility, the ACF of squared standardized residuals become flat, indicating that the model successfully captures the time varying variance structure. This diagnostic confirms that GARCH (1,1) is sufficient.
 
+<figcaption><p><span id="_Toc220433930" class="anchor"></span>Figure 12: ACF of Squared Export Returns (Before vs After GARCH)</p></figcaption>
 <figure>
 <img src="images/media/image12.png" style="width:5.86364in;height:4.01319in" />
-<figcaption><p><span id="_Toc220433930" class="anchor"></span>Figure 12: ACF of Squared Export Returns (Before vs After GARCH)</p></figcaption>
+
 </figure>
 
 Figure 13 plots annual goods export goods log return alongside GARCH estimated conditional volatility. Returns surge dramatically in 2009(GFC) and 2015(commodity bust, early trade tensions). Critically, while returns swing negative during crises, volatility remain non negative measuring the magnitude of uncertainty not direction. The sustained elevation of the volatility confirms that the world has not returned to the low uncertainty regime of hyper globalization. Consequently, global trade is now characterized by structurally higher volatility, driven by geo political fragmentation, supply chain reconfiguration and financial instability.
 
+<figcaption><p><span id="_Toc220433931" class="anchor"></span>Figure 13: Annual goods export goods log return vs. GARCH estimated conditional volatility</p></figcaption>
 <figure>
 <img src="images/media/image13.png" style="width:6.42455in;height:3.30303in" />
-<figcaption><p><span id="_Toc220433931" class="anchor"></span>Figure 13: Annual goods export goods log return vs. GARCH estimated conditional volatility</p></figcaption>
+
 </figure>
 
-Returns computed as annual cross country mean of country pf goods export log returns conditional volatility derived from estimated parameters. Sample: N=7,455 country year observations.
-
-Source: Author calculations using WDI data
+<small><i>Returns computed as annual cross country mean of country pf goods export log returns conditional volatility derived from estimated parameters. Sample: N=7,455 country year observations.
+Source: Author calculations using WDI data</i></small>
 
 In Summary, the univariate analysis confirms three critical facts: Volatility is time varying and persistent in trade and gdp flows especially in goods exports where shocks exhibit long memory; Trade has become structurally more volatile since the global financial crisis while GDP volatility has declined creating an asymmetry in risk exposure; The GARCH (1,1) model is well specified as validated by ACF diagnostics and provide reliable conditional volatility estimates for each series.
 
@@ -916,28 +889,28 @@ Having established that trade has become significantly more volatile than GDP si
 
 With fewer annual observations, parametric multivariate volatility models (like DCC-GARCH) are prone to overfitting and convergence issues. Instead, we follow the approach of Rancière et al. (2008) in macro finance. We estimate time-varying volatility as the 5-year rolling standard deviation of global average log returns, we further construct standardized shocks by dividing returns by their local volatility and compute a 5-year rolling correlation between these standardized series. This method isolates changes in co-movement strength from changes in individual volatility levels, revealing how the relationship itself evolves.
 
-As confirmed by our Chow test (F = 15.4, p \< 0.01), 2008 marks a decisive regime shift. In the post-crisis era (2009–2024), trade volatility surged by 87.4% from 0.060 to 0.112 while GDP volatility declined by 21.4%, from 0.098 to 0.077 (Table 15). This finding overturns the ‘Great Moderation’ narrative by Bernanke (2004). While domestic economies benefited from automatic stabilizers and service led growth, global trade absorbed systemic shocks aided by automatic stabilisers and supported by the growth of services. The result is a new macroeconomic reality where nations are internally stable but externally exposed
-
-| Metric | Pre-2008 | Post-2008 | % Change | Economic Implication |
-|:---|:---|:---|:---|:---|
-| Avg.Trade Growth Volatility | 0.06 | 0.112 | 87.4% | Trade became a macro source of global macroeconomic risk |
-| Avg.GDP Growth Volatility | 0.098 | 0.077 | -21.4% | Domestic economies stabilized as external linkages became turbulent |
-| Volatility Ratio (Trade/GDP) | 0.61 | 1.45 | +138% | Trade has become significantly more volatile than GDP |
+As confirmed by our Chow test (F = 15.4, p \< 0.01), 2008 marks a decisive regime shift. In the post-crisis era (2009–2024), trade volatility surged by 87.4% from 0.060 to 0.112 while GDP volatility declined by 21.4%, from 0.098 to 0.077 (Table 15). This finding overturns the ‘Great Moderation’ narrative by Bernanke (2004). While domestic economies benefited from automatic stabilizers and service led growth, global trade absorbed systemic shocks aided by automatic stabilisers and supported by the growth of services. The result is a new macroeconomic reality where nations are internally stable but externally exposed.
 
 <span id="_Toc220433950" class="anchor"></span>Table 15: The Post-2008 Structural Break in Volatility
+
+| Metric                       | Pre-2008 | Post-2008 | % Change | Economic Implication                                                |
+|:---------------------------- |:-------- |:--------- |:-------- |:------------------------------------------------------------------- |
+| Avg.Trade Growth Volatility  | 0.06     | 0.112     | 87.4%    | Trade became a macro source of global macroeconomic risk            |
+| Avg.GDP Growth Volatility    | 0.098    | 0.077     | -21.4%   | Domestic economies stabilized as external linkages became turbulent |
+| Volatility Ratio (Trade/GDP) | 0.61     | 1.45      | +138%    | Trade has become significantly more volatile than GDP               |
 
 Figure 14 reveal this stark regime shift. Before 2008, GDP growth was more volatile than trade, a reflection of domestic business cycle fluctuations. After 2008, this relationship flipped decisively, trade volatility surged by 87.4% (from 0.06 to 0.112), while GDP volatility declined by 21.4% from 0.098 to 0.077. the most volatile years for trade were 2009(0.150), 2011(0.150) and 2012(0.140) all crisis or post crisis periods.
 
 This divergence reflects a fundamental shift, domestic economies have stabilized through automatic stabilizers, service led growth and monetary credibility, while global trade has become the primary carriers of systemic risk. The year-to-year autocorrelation of trade volatility (0.63) confirms structural uncertainty driven by on-going supply chain restructuring of supply chain restructuring and geopolitical fragmentation.
 
+<figcaption><p><span id="_Toc220433932" class="anchor"></span>Figure 14: Rolling Volatility: Trade Vs GDP (5 Year Rolling Window)</p></figcaption>
 <figure>
 <img src="images/media/image14.png" style="width:6.68548in;height:3.59167in" />
-<figcaption><p><span id="_Toc220433932" class="anchor"></span>Figure 14: Rolling Volatility: Trade Vs GDP (5 Year Rolling Window)</p></figcaption>
+
 </figure>
 
-Annual std.dev of trade and gdp log returns computed using a 5 year rolling window. Volatility series derived from country level data aggregated to global annual means. Sample: N =7,455 country year observations:
-
-Source: Author calculations using WDI data
+<small><i>Annual Std.dev of trade and gdp log returns computed using a 5 year rolling window. Volatility series derived from country level data aggregated to global annual means. Sample: N =7,455 country year observations:
+Source: Author calculations using WDI data</i></small>
 
 These volatility irregularities reshaped the trade-GDP relationship. Figure 15 shows that the average correlation between standardized shocks weakened from -0.40 (pre-2008) to -0.06 post 2008, indicating near total decoupling in normal times. Yet this baseline decoupling masks dramatic crisis-specific dynamics: In 2009 (GFC) correlation plunged to -0.81, an extreme negative co-movement, both GDP and exports collapsed, but exports fell faster, creating strong negative correlation in growth rates. This reflects a synchronized global demand shock transmitted through financial and trade linkages (Levchenko et al., 2010).
 
@@ -949,9 +922,8 @@ Critically, the negative sign during crises captures asymmetric adjustment speed
 
 <img src="images/media/image15.png" style="width:6.74444in;height:3.48333in" />
 
-Rolling correlation of volatility standardized log returns(GDP and Trade), each return is divided by its 5 year rolling standard deviation. Sample: N =7,455 country year observations:
-
-Source: Author calculations using WDI data
+<small><i>Rolling correlation of volatility standardized log returns(GDP and Trade), each return is divided by its 5 year rolling standard deviation. Sample: N =7,455 country year observations:
+Source: Author calculations using WDI data</i></small>
 
 In summary, these findings overturn the two pillars of globalization theory: First, trade is no longer a stabilizing force but an amplifier of global shocks. Second, the trade GDP link is no longer stable but sporadic, dominant in calm periods but explosive in crises. This defines fragile integration, where openness delivers efficiency gains in good times but exposes economies to outsized losses in bad times.
 
@@ -961,19 +933,18 @@ This section examines the core macroeconomic determinants of export performance 
 
 The regression results are presented in Table 16. All models show strong explanatory power with R-squared values between 0.73 and 0.89.
 
-| Variable | Model 1: total exports | Model 2: Goods exports | Model 3: Service exports |
-|:---|:---|:---|:---|
-| log(gdp_usd) | 0.658(0.00) | 0.635(0.00) | 0.701(0.00) |
-| log(exch_rate) | 0.011(0.08) |  |  |
-| fx_volatility |  | -7.837e-06(0.04) | 8.919e-06(0.06) |
-| inflation | -0.008(0.00) | -0.009(0.00) | -0.007(0.00) |
-| log(gdp_pc_usd) | 0.014(0.00) |  |  |
-| trade_openness_pct | 0.007(0.00) | 0.007(0.00) | 0.007(0.00) |
-| observations | 2466 | 2342 | 2342 |
-| R-squared | 0.892 | 0.7641 | 0.722 |
-| Notes: | p_values in parenthesis; (p\<0.01) | Year and country effects included |  |
-
 <span id="_Toc220478210" class="anchor"></span>Figure 16 :Panel Regression Results for Export Determinants
+| Variable           | Model 1: total exports             | Model 2: Goods exports            | Model 3: Service exports |
+|:------------------ |:---------------------------------- |:--------------------------------- |:------------------------ |
+| log(gdp_usd)       | 0.658(0.00)                        | 0.635(0.00)                       | 0.701(0.00)              |
+| log(exch_rate)     | 0.011(0.08)                        |                                   |                          |
+| fx_volatility      |                                    | -7.837e-06(0.04)                  | 8.919e-06(0.06)          |
+| inflation          | -0.008(0.00)                       | -0.009(0.00)                      | -0.007(0.00)             |
+| log(gdp_pc_usd)    | 0.014(0.00)                        |                                   |                          |
+| trade_openness_pct | 0.007(0.00)                        | 0.007(0.00)                       | 0.007(0.00)              |
+| observations       | 2466                               | 2342                              | 2342                     |
+| R-squared          | 0.892                              | 0.7641                            | 0.722                    |
+| Notes:             | p_values in parenthesis; (p\<0.01) | Year and country effects included |                          |
 
 ### 4.9.1 Income Elasticity Is Strong but Divergent
 
@@ -1003,11 +974,11 @@ The stronger effect for goods underscores their dependence on border measures i.
 
 In summary, the results confirm we live in a dual track trade system, domestic stability i.e. GDP growth and low inflation is the foundation of export success. Digital integration not just openness determines service competitiveness, financial volatility i.e. FX and interest rates matters far less than traditionally assumed. This duality explains the paradox of modern globalization, aggregate trade may slow, but high value services accelerate. It also redefines policy priorities; for goods, stabilize currencies and streamline boarders; for services, invest in human capital and digital governance.
 
-#  5. IMPLICATIONS FOR THEORY AND POLICY 
+# 5. IMPLICATIONS FOR THEORY AND POLICY
 
-##  5.1 Implications for Core Trade Theories: Accounting for Time Varying Dynamics 
+## 5.1 Implications for Core Trade Theories: Accounting for Time Varying Dynamics
 
-###  5.1.1 Limits of Constant Parameter Models 
+### 5.1.1 Limits of Constant Parameter Models
 
 Our findings fundamentally challenge the constant parameter assumptions underpinning much of international trade theory. The extreme persistence in volatility (α+β=0.93 for goods) and the structural break in correlations (-0.40 to -0.06) suggest that trade elasticities are not stable over time but evolve with the global economic regime. Let’s consider three key failures uncovered in this study:
 
@@ -1019,7 +990,7 @@ Volatility persistence: Trade volatility surged by 87.4% after 2008 and exhibits
 
 These findings call for a paradigm shift toward time varying parameter models, regime switching frameworks, and state contingent policy rules. As Primiceri (2005) showed for monetary policy, allowing coefficients to drift over time reveals hidden structural breaks and improves forecasting. In trade, such an approach would treat openness as a dynamic strategy adjusted to global uncertainty and domestic capacity.
 
-###  5.1.2 Reconciling Services Trade with Traditional Theory 
+### 5.1.2 Reconciling Services Trade with Traditional Theory
 
 Traditional trade theory from Ricardian’s comparative advantage, Heckscher-Ohlin’s factor endowments, and New Trade Theory’s increasing returns were built almost exclusively on the economics of tangible goods. Services were treated as a residual and non-tradable sector and assumed to be immobile, labor intensive, and insensitive to global integration. Our findings however demonstrate that this framework is misleading in the digital age. Three empirical facts from this analysis defy traditional models:
 
@@ -1031,7 +1002,7 @@ Third, service dominant economies suffered far milder GDP contractions during th
 
 Such patterns demand a new theoretical foundation for services trade, one that centers on digital platforms, intangible capital, and global pricing regimes rather than tariffs, transport costs, or factor proportions. Hoekman and Mattoo (2021) argue that services trade is governed by ‘behind-the-border’ regulations (data flows, IP rights, professional licensing), not ‘across the border’ barriers. Our results confirm this, services respond to domestic fundamentals i.e. GDP, institutions and not on external price signals i.e. exchange rates.
 
-###  5.1.3 Limits of Conventional Trade Openness Models
+### 5.1.3 Limits of Conventional Trade Openness Models
 
 Trade openness has been traditionally modeled as having a uniformly positive relationship with economic growth. More openness meant more growth, efficiency, and convergence, policy advice followed mechanically, liberalize borders, reduce tariffs and join global value chains. Our analysis however reveals a nonlinear relationship where openness can be a source of vulnerability as much as opportunity. Three findings redefine the economics of openness:
 
@@ -1043,9 +1014,9 @@ Third, the hub illusion: Extreme trade hubs exhibit average deviations from the 
 
 Together, these insights demand a new economics of openness, one that treats it not as a policy target, but as an equilibrium outcome shaped by domestic institutions, geopolitical alignment, and risk tolerance. The goal is no longer maximal openness, but optimal resilience, the level of integration that maximizes gains while minimizing fragility. As our panel regressions confirm, GDP growth and macroeconomic stability, not border liberalization are the true drivers of export success.
 
-##  5.2 Policy Implications Amidst Persistent Volatility 
+## 5.2 Policy Implications Amidst Persistent Volatility
 
-###  5.2.1 Rethinking Trade Stabilization Policies 
+### 5.2.1 Rethinking Trade Stabilization Policies
 
 The extreme persistence of trade volatility (9.1year) half-life for goods means that temporary stabilization measures are inadequate. Traditional countercyclical policies designed for business cycle fluctuations (typically 2-5 years) may be mismatched with trade volatility that persists nearly a decade. This therefore suggest:
 
@@ -1053,7 +1024,7 @@ Longer Policy Horizons: Trade stabilization policies need multi-year frameworks 
 
 Volatility-Contingent Policies: Since volatility itself is persistent and predictable to some extent, policies could be explicitly conditioned on volatility regimes. For example, trade finance support could automatically scale up when volatility exceeds certain thresholds.
 
-###  5.2.2 Services Trade as a Stabilization Tool 
+### 5.2.2 Services Trade as a Stabilization Tool
 
 The superior crisis resilience of service-dominant economies (-1.20% GDP impact vs -1.81% for goods-dominant) suggests that services trade development can enhance macroeconomic stability. This represents a potential "double dividend": services contribute to growth whilst reducing volatility exposure. We therefore recommend:
 
@@ -1063,37 +1034,37 @@ Digital trade infrastructure: Investment in broadband, data protection framework
 
 Services Trade Specific Risk Management: Insurance and financing products tailored to services different risk profile.
 
-###  5.2.3 Optimal Openness Strategies 
+### 5.2.3 Optimal Openness Strategies
 
 The finding that moderate openness (30-60% of GDP) delivers the best crisis outcomes creates an optimal policy mx that many countries may wish to target. Low-income countries should prioritize regional integration over global exposure, this lowers logistical risk. Middle income countries should use openness selectively by liberalizing services and digital trade while maintaining safeguards on critical goods e.g. food, energy and health. Therefore, trade agreements could include provisions that enhance rather than undermine resilience, such as diversified sourcing requirements, crisis cooperation mechanisms, and adjustment support.
 
-###  5.2.4 Exchange Rate Policy Reconsidered 
+### 5.2.4 Exchange Rate Policy Reconsidered
 
 The statistically insignificant effects of exchange rates on exports (β=0.010, p=0.83) challenges decades of trade policy focused on competitive devaluations. This suggests that, countries should prioritize exchange rate stability over depreciation, countries may gain more from stable exchange rates that facilitate long term trade relationships than from competitive devaluations that offer temporary advantages.
 
 Additionally, since export success increasingly depends on non-price factors like quality and reliability, services components that exchange rate changes don’t affect. Policy should correspondingly shift toward quality upgrading and supply chain integration rather than price competition.
 
-##  5.3 Implications for Business Strategy and Risk Management 
+## 5.3 Implications for Business Strategy and Risk Management
 
-###  5.3.1 Extended Risk Horizons 
+### 5.3.1 Extended Risk Horizons
 
 The persistence of trade volatility means businesses need to extend their risk management horizons. Traditional annual planning cycles may be inadequate when volatility shocks have effects lasting nearly a decade. This calls for: Multi-year rather than annual hedging of currency and commodity risks; Planning for different volatility environments rather than just point forecasts and supply chain resilience investments as volatility persistence makes supply chain disruptions more costly.
 
-###  5.3.2 Differentiating Goods and Services Strategies 
+### 5.3.2 Differentiating Goods and Services Strategies
 
 Our results show a stark divergence: goods exports are harmed by exchange rate volatility (p= 0.04), while services are unaffected (p = 0.64). This demands distinct strategies. Goods focused firms must invest in currency hedging, dual invoicing (USD and local currencies) to reduce exposure to financial turbulence. Services focused firms on the other hand should leverage their FX insulation as a competitive advantage expanding into volatile currency markets where competitors retreat, and pricing in hard currencies without volume loss.
 
-### 5.3.3 The Value of Trade Openness Intelligence 
+### 5.3.3 The Value of Trade Openness Intelligence
 
 The non-linear relationship between openness and resilience means that businesses need sophisticated measures of trading partner vulnerability. Simple measures of trade volume may be misleading; what matters is the composition and structure of trade relationships.
 
 Companies may want to balance efficiency through concentrated sourcing from highly open economies with resilience by diversified sourcing including moderately open economies.
 
-##  5.4 Limitations and Future Research Directions 
+## 5.4 Limitations and Future Research Directions
 
 While this study offers a comprehensive empirical portrait of post-hyper globalization trade dynamics, it is not without limitations. Acknowledging these boundaries not only strengthens the credibility of the findings but also creates a fertile ground for future research.
 
-###  5.4.1 Data Limitations and Opportunities 
+### 5.4.1 Data Limitations and Opportunities
 
 While our analysis covers 213 countries over 35 years, several data limitations warrant consideration:
 
@@ -1101,11 +1072,11 @@ Services trade measurement: Services trade data remain less comprehensive than g
 
 Disaggregated volatility: Our analysis at the goods-services level could be extended to sectoral or even product level volatility, which might reveal important heterogeneity masked by aggregation.
 
-### 5.4.2 Methodological Extensions 
+### 5.4.2 Methodological Extensions
 
 This study uses rolling window and GARCH based approaches suited to annual macro data. However, three methodological advances could deepen insights: State space models with time varying parameters for instance Time Varying Parameter Vector Autoregressions (TVP-VARs) could formally test for structural breaks in elasticity and correlation regimes, moving beyond visual inspection; Machine learning clustering e.g. k-means on crisis response profiles could identify latent resilience archetypes beyond pre-defined groups i.e. goods vs. services; Network analysis of supply chains could map how volatility propagates through Global Value Chains (GVC), linking firm level fragility to national outcomes.
 
-###  5.4.3 Unexplored Questions 
+### 5.4.3 Unexplored Questions
 
 Several critical questions remain open:
 
@@ -1115,9 +1086,9 @@ Several critical questions remain open:
 
 3\. Can resilience optimal openness be quantified dynamically? A policy rule that adjusts openness thresholds based on real time volatility indicators could offer a new stabilization tool for developing economies.
 
-#  6. CONCLUSION 
+# 6. CONCLUSION
 
-##  6.1 Summary of Key Findings 
+## 6.1 Summary of Key Findings
 
 This study has provided comprehensive evidence that global trade has entered a new volatility regime characterized by four fundamental shifts:
 
@@ -1129,7 +1100,7 @@ This study has provided comprehensive evidence that global trade has entered a n
 
 4.Structural resilience divide: service dominant economies suffered 72% smaller GDP contractions during the GFC (-1.20 vs -1.81) and exhibited greater recovery strength. services are also insensitive to exchange rate volatility (p=0.64) unlike goods (p=0.04) confirming a dual track trade system.
 
-##  6.2 Theoretical Contributions 
+## 6.2 Theoretical Contributions
 
 This study makes three core contributions that challenge and extend the theoretical foundations of international trade economics.
 
@@ -1141,7 +1112,7 @@ Third, it redefines openness as a conditional, not universal, good. The canonica
 
 Together, these contributions move trade theory beyond the hyper-globalization paradigm toward a framework that embraces heterogeneity, uncertainty, and adaptation as defining features of 21<sup>st</sup> century globalization.
 
-##  6.3 Policy Recommendations 
+## 6.3 Policy Recommendations
 
 Strategic rather than maximal openness: Export success is driven first and foremost by domestic factors. GDP growth and low inflation significantly boost exports across all sectors. In contrast, extreme openness without institutional backing increases vulnerability. Countries with trade openness below 60% of GDP consistently experienced milder crisis contractions, while hyper open economies suffered deeper downturns unless they possessed exceptional institutions (e.g., Singapore). Governments should therefore prioritize macroeconomic stability, human capital, and regulatory quality and regulate their degree of integration to that foundation.
 
@@ -1153,7 +1124,7 @@ De-emphasize exchange rate targeting for trade purposes: The insignificance of e
 
 Together, these recommendations shift the goal of trade policy from maximizing flows to managing fragility
 
-##  6.4 The Future of Global Trade 
+## 6.4 The Future of Global Trade
 
 The findings of this study indicate that global trade is undergoing a structural transformation, with three key features likely to define its future trajectory.
 
@@ -1164,5 +1135,3 @@ Second, services will play an expanding role in trade resilience. Service domina
 Third, volatility persistence will reshape policy horizons. The estimated half-life of goods export volatility shocks is 9.1 years, indicating that trade uncertainty is not transitory but long lasting. This implies that both governments and firms must shift from short term stabilization tools to multi-year risk management strategies, including strategic diversification, supply chain redundancy, and automatic stabilizers triggered by volatility thresholds.
 
 These trends point not to a reversal of globalization, but to its reconfiguration around resilience, differentiation, and domestic institutional strength. Openness will remain important, but its benefits will be conditional on complementary domestic capabilities not guaranteed by integration alone.
-
-
