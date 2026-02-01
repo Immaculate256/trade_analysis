@@ -4,52 +4,256 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Evolving Nature of Global Trade</title>
-    <!-- Pico.css - A beautiful, minimal CSS framework -->
+   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+    <meta name="description" content="An analysis of time-varying volatility, conditional correlations, and elasticities in global trade (1990-2024)">
+    <meta property="og:title" content="The Evolving Nature of Global Trade">
+    <meta property="og:description" content="Complete research with data analysis, empirical results, and Python code">
+    <meta property="og:type" content="website">
+
+    
     <style>
-        /* Just a tiny bit of extra styling for our hero section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 1rem;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-        .hero h1 {
-            margin-bottom: 0.5rem;
-        }
-        .hero .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        .chapter-link {
-            display: block;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--primary);
-            text-decoration: none;
-        }
-        .chapter-link:hover {
-            background-color: #f5f5f5;
-        }
+             
+    :root {
+        --primary: #2563eb;    
+        --secondary: #7c3aed;   
+        --accent: #06b6d4;      
+        --dark: #0f172a;        
+        --light: #f8fafc;     
+        --gray: #475569;       
+        --success: #10b981;     
+        --border-radius: 12px;
+        --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --transition: all 0.3s ease;
+    }
+    body {
+        background-color: var(--dark);
+        color: var(--dark);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        line-height: 1.5;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+        padding: 3rem 1rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent), #fff);
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .hero .subtitle {
+        font-size: 1.4rem;
+        opacity: 0.95;
+        max-width: 700px;
+        margin: 0 auto;
+        font-weight: 300;
+    }
+
+    
+    .chapter-link {
+        display: block;
+        background: white;
+        padding: 1.8rem;
+        margin-bottom: 1.2rem;
+        border-left: 5px solid var(--primary);
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        color: var(--dark);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .chapter-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.05), transparent);
+        transition: left 0.7s ease;
+    }
+
+    .chapter-link:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+        border-left-color: var(--accent);
+    }
+
+    .chapter-link:hover::before {
+        left: 100%;
+    }
+
+    .chapter-link strong {
+        font-size: 1.3rem;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .chapter-link small {
+        color: var(--gray);
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+
+    .button {
+        display: inline-block;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        color: white;
+        padding: 0.9rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        text-align: center;
+        margin: 0.5rem;
+    }
+
+    .button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 20px -5px rgba(37, 99, 235, 0.3);
+        color: white;
+    }
+
+    .button.secondary {
+        background: white;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+    }
+
+
+    section {
+        padding: 3rem 1.5rem;
+        background: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        margin-bottom: 2.5rem;
+    }
+
+    h2 {
+        color: var(--dark);
+        border-bottom: 2px solid var(--accent);
+        padding-bottom: 0.7rem;
+        margin-bottom: 1.8rem;
+        font-size: 2.2rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    h2 i, h2 span.emoji {
+        font-size: 1.8rem;
+    }
+
+    
+    footer {
+        text-align: center;
+        padding: 2.5rem;
+        color: var(--gray);
+        font-size: 0.95rem;
+        border-top: 1px solid #e2e8f0;
+        margin-top: 3rem;
+    }
+
+    
+    hr {
+        border: none;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--gray), transparent);
+        margin: 3rem 0;
+    }
+
+    ul {
+        padding-left: 1.5rem;
+    }
+
+    li {
+        margin-bottom: 0.7rem;
+        position: relative;
+    }
+
+    li::before {
+        content: '▸';
+        color: var(--accent);
+        font-weight: bold;
+        position: absolute;
+        left: -1.2rem;
+    }
+
+    code {
+        background: #f1f5f9;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        color: var(--secondary);
+        font-size: 0.9rem;
+    }
+      body, .container, p, li {
+        color: #0f172a !important;}
+      .chapter-link, .chapter-link strong, .chapter-link small {  
+        color: #0f172a !important  }
+      section h2, section h3, article h3 {
+        color: #1e293b !important;
+        border-bottom-color: #06b6d4 !important}
+      code {
+        background-color: #f1f5f9 !important;
+        color: #7c3aed !important
+      }
+     h3.jump-heading {
+        color: #f1f5f9 !important}
     </style>
+  
+    
 </head>
 <body>
     <main class="container">
-        <!-- Hero Section -->
+       
         <section class="hero" data-theme="dark">
             <h1>The Evolving Nature of Global Trade</h1>
-            <p class="subtitle">An analysis of time-varying volatility, conditional correlations, and elasticities: 1990 - 2024</p>
+            <p class="subtitle">An Analysis of Time Varying volatility, Conditional Correlations, and Elasticities: 1990 - 2024</p>
         </section>
 
-        <!-- Main Content -->
+       
         <section>
             <h2>📑 Complete Research Report</h2>
             <p>This is the central hub for the full research project. Below are direct links to each chapter within the single report file.</p>
 
             <article>
-                <h3>Jump to Chapter:</h3>
-                <!-- These links point to YOUR report file and its internal IDs -->
+                <h3 class ="jump-heading"> Jump to Chapter:</h3>
+                
                 <a href="trade_analysis_report.html#abstract" class="chapter-link">
                     <strong>Abstract</strong><br>
                     <small>Research summary, objectives, and key findings.</small>
@@ -81,13 +285,13 @@
             </article>
         </section>
 
-        <hr> <!-- A simple divider -->
+        <hr> 
 
         <section>
             <h2>💻 Interactive Code & Analysis</h2>
             <p>Explore the Python-based quantitative analysis that powered the results.</p>
-            <a href="trade_analysis.ipynb" role="button" class="secondary">View Jupyter Notebook (.ipynb)</a>
-            <!-- GitHub can render .ipynb files directly! -->
+            <a href="https://nbviewer.org/github/Immaculate256/trade_analysis/blob/main/trade_analysis.ipynb" class="button" target ="_blank"><i class ="fas fa-eye"></i>i> View Notebook with nbviewer</a>
+            
         </section>
 
         <hr>
@@ -95,11 +299,15 @@
         <section>
             <h2>📁 Repository Contents</h2>
             <ul>
-                <li><code>/data</code> - Raw and processed datasets</li>
-                <li><code>trade_analysis.ipynb</code> - Complete analysis notebook</li>
-                <li><code>trade_analysis_report.html</code> - Full research report</li>
-                <li><code>requirements.txt</code> - Python dependencies</li>
-                <li><code>/images</code> - Generated figures and charts</li>
+                    <li><a href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/tree/main/data" target="_blank"><code>/data</code></a> - Raw and processed datasets</li>
+                    <li><a href="https://nbviewer.org/github/Immaculate256/trade_analysis/blob/main/trade_analysis.ipynb" target="_blank"><code>trade_analysis.ipynb</code></a> - Complete analysis notebook (view with nbviewer)</li>
+                    <li><a href="trade_analysis_report.html"><code>trade_analysis_report.html</code></a> - Full research report</li>
+                    <li><a href="https://github.com/Immaculate256/trade_analysis/blob/main/requirements.txt" target="_blank"><code>requirements.txt</code></a> - Python dependencies</li>
+                    <li><a href="https://github.com/Immaculate256/trade_analysis/tree/main/report/images/media" target="_blank"><code>/images</code></a> - Generated figures and charts</li>
+</ul>
+
+
+
             </ul>
         </section>
 
@@ -108,5 +316,53 @@
         </footer>
     </main>
 </body>
+<script>
+        
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if(href !== '#') {
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+
+    
+    const topButton = document.createElement('button');
+    topButton.innerHTML = '↑ Top';
+    topButton.style.cssText = `
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 12px 18px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        display: none;
+        z-index: 100;
+        transition: all 0.3s ease;
+    `;
+    document.body.appendChild(topButton);
+
+    topButton.addEventListener('click', () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+
+    window.addEventListener('scroll', () => {
+        topButton.style.display = window.scrollY > 500 ? 'block' : 'none';
+    });
+
+    </script>
 </html>
 
