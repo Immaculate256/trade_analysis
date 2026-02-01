@@ -1,6 +1,6 @@
 # Live Project Website
 ** view the complete interactive report and analysis here**
-**[https://Immaculate256.github.io/trade_analysis]**
+https://Immaculate256.github.io/trade_analysis
 # The Evolving Nature of Global Trade: An Analysis of Time Varying Volatility, Conditional Correlations and Elasticities (1990- 2024)
 This repository contains code and documentation for an empirical analysis of global trade patterns using World Development Indicators (WDI) data from 1990 to 2024. The study examines structural changes in trade and GDP linkages, volatility dynamics, and cross-country heterogeneity in crisis resilience.
 
