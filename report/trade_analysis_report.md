@@ -1,5 +1,4 @@
-The Evolving Nature of Global Trade: An Analysis of Time Varying Volatility, Conditional Correlations and Elasticities (1990- 2024)
-
+**The Evolving Nature of Global Trade: An Analysis of Time Varying Volatility, Conditional Correlations and Elasticities (1990- 2024)**
 # Abstract
 
 This paper examines the evolution of global trade dynamics analyzing data for 213 countries from 1990-2024 using the World Banks’ World Development indicators. We focus on the time varying nature of trade elasticities, conditional correlations and structural heterogeneity across countries and sectors. An integrated time series econometric pipeline is implemented combining GARCH (1,1) models, rolling volatility measures and dynamic correlation analysis. We document the following fundamental transformations.
@@ -43,7 +42,8 @@ These approaches, while practical they can obscure a significant flaw. They fail
 2\. How have the conditional correlations between trade and GDP evolved, and what explains the apparent decoupling in recent years?
 
 3\. Are there systematic differences in volatility and resilience between goods and services, or across income groups?
-<span id="_Toc220426103" class="anchor"></span>Table 1: Summary of Key Facts: Global Trade Dynamics Before and After the 2008 Global Financial Crisis
+
+<span id="_Toc220426103" class="anchor"></span>Table 1: Summary of Key Facts: Global Trade Dynamics Pre vs.Post the 2008 Global Financial Crisis
 | Metric                                             | Pre 2008 | Post 2008 | Change                       |
 |:-------------------------------------------------- |:-------- |:--------- |:---------------------------- |
 | Average trade volatility (5-year rolling std.dev.) | 0.06     | 0.112     | +87.4%                       |
@@ -425,6 +425,7 @@ A few countries (e.g. Singapore, Luxembourg) report trade openness greater than 
 ### 3.2.2. Stationarity Testing
 
 The assumption of stationarity is the foundation of casual interpretation, non-stationary series can appear correlated even when unrelated (Phillips,1986), to avoid this we apply dual unit root tests. This two-sided approach mitigates the risk of false stabilization and over differencing which introduces artificial dynamics. Our findings in Table 8 show that all key variables are stationary in growth rates except inflation this validates the use of level-based elasticity models only if co-integration holds (Engle & Granger,1987). Since we focus on short to medium run dynamics i.e. volatility and crisis response, to avoid the complexities of cointegration, we conduct our analysis using stationary growth rates.
+
 <span id="_Toc220426110" class="anchor"></span>Table 8: Results of ADF and KPSS tests
 
 | Variable                       | ADF statistic | ADF p_value | KPSS statistic | KPSS p_value | stationary |
@@ -606,6 +607,7 @@ Source: Author calculations using WDI data</i></small>
 Service trade was once dismissed as a non-tradable residual in international trade models (Baumol,1967), it has since emerged as a central pillar of global commerce reshaped by digitalization, shifting comparative advantage and skill accumulation. Far from being passive, the service sector now exhibits distinct cyclical properties, structural momentum and crisis resilience that rival those of goods.
 
 Using a comprehensive panel of 213 countries over 1990-2024, this analysis reveals that services are no longer a passive residual but an active and strategic component of global trade. The results in Table 10 reveal that only 50 countries (23%) are service dominant, while 163 (77%) remain goods dominant, however, economies with service dominant export structures demonstrated superior resilience with milder GDP declines and notably more stable export performance. As shown in figure 10, service dominance is concentrated in high income economies which consistently maintain service shares above 32% of total exports.
+
 <span id="_Toc220433945" class="anchor"></span>Table 10: Export composition and Crisis Resilience
 | Export Composition | N_Countries | % of sample | Avg.GDP crisis Impact | Avg.Export Crisis impact |
 |:------------------ |:----------- |:----------- |:--------------------- |:------------------------ |
@@ -664,6 +666,7 @@ Yet our analysis of 213 countries over 1990-2024 reveals that this convergence h
 A striking indicator of this shift is the rising dispersion in trade openness across nations. As shown in Table 11, the standard deviation of trade openness (% of GDP) across 213 countries surged from 64.3 in 2007 to 77.9 in 2008, the peak year of financial globalization and remained elevated thereafter (69.7 in 2011, 64.3 in 2010). This contrasts sharply with the 1990s, when dispersion gradually narrowed.
 
 The Chow test confirms a structural break at 2009 (F = 15.4, p \< 0.01), marking the end of the convergence regime. Critically, this divergence is not random, it aligns with endogenous trade policy models (Maggi & Rodriguez,2007). The analysis further shows that global average openness leveled off around 60% after 2008, but this masks a divergence, a small set of hyper-globalized hubs pulled the mean upward, while the majority of countries either stagnated or retreated.
+
 <span id="_Toc220433946" class="anchor"></span>Table 11: Top 5 years with the highest trade openness dispersion
 | Year | Count | Std.dev. |
 |:---- |:----- |:-------- |
@@ -704,6 +707,7 @@ Source: Author calculations using WDI data</i></small>
 ## 4.4. Crisis Resilience Optimal Threshold
 
 Contrary to both protectionist and hyper-globalization theories, we find a non-linear relationship between trade openness and crisis resilience. Countries with trade openness below 60% of GDP suffered significantly milder GDP contractions during the 2008-2009 GFC (-0.77%) compared to more open economies (-2.11%, p\<0.05). This pattern holds across all tested thresholds (Table 12), with the worst outcomes concentrated among hyper open economies (\>100%), such nations experienced both deeper recessions and higher cross-country volatility (σ = 3.94)
+
 <span id="_Toc220433947" class="anchor"></span>Table 12: Crisis Impact by Pre-Crisis Trade Openness Threshold (2008-2009)
 
 | Openness Category                             | N_Countries     | Avg.GDP Impact (%) | Avg.Export Impact (%) | Interpretation                                            |
@@ -755,6 +759,7 @@ While most countries conform to a broad global relationship between income dynam
 The results in Table 13 reveal ten extreme outliers. Singapore leads with an average deviation of 260.9 percentage points, followed by Djibouti (242.5), San Marino (237.8), and Hong Kong SAR (237.0). These economies operate outside the standard trade-growth linkages that govern most of the world.
 
 These deviations reflect structural exceptionalism. For Singapore and Hong Kong, high residuals come from their roles as global logistics and financial intermediaries, their trade flows include re-exports, intra-firm transfers, and digital routing that bear little relation to domestic GDP. Djibouti’s deviation arises from its strategic position as a trans-shipment hub for East Africa, while Luxembourg and Ireland reflect Base Erosion and Profit Shifting (BEPS) driven distortions i.e. intellectual property shifting that inflate trade statistics without corresponding reals sector activity (Wier, 2019).
+
 <span id="_Toc220433948" class="anchor"></span>Table 13: Countries with Consistently Atypical Trade GDP Dynamics
 | Country              | Avg. Absolute Residual (pp) |
 |:-------------------- |:--------------------------- |
