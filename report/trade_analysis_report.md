@@ -457,21 +457,23 @@ Traditional trade models treat shocks as exogenous and homoscedastic an assumpti
 
 Time varying volatility was therefore modeled using: Engles ARCH-LM test on OLS residuals (null: no ARCH effects); Autocorrelation Function (ACF) of squared returns. Upon confirmation (p=0.03 for goods exports), we estimate univariate GARCH (1,1) models.
 
-For a stationary return series $`r_{t}`$ the model is: Mean Equation: $`r_{t}`$ = µ +$`\in_{t}`$, $`\in_{t} = {\in \sigma}_{t}z_{t}`$, $`z_{t}\sim N(0,1)`$. Variance equation: $`\sigma_{t}^{2} = \omega + \alpha\epsilon_{t - 1}^{2} + \beta\sigma_{t - 1}^{2}`$
+For a stationary return series $r_{t}$ the model is: Mean Equation: $r_{t}$ = µ +$\in_{t}$, $\in_{t} = {\in \sigma}_{t}z_{t}$, $z_{t}\sim N(0,1)$. 
+
+Variance equation: $\sigma_{t}^{2} = \omega + \alpha\epsilon_{t - 1}^{2} + \beta\sigma_{t - 1}^{2}$
 
 where:
 
-$`\omega >`$ 0: Constant variance component
+$\omega >$ 0: Constant variance component
 
-$`\alpha \geq 0`$: ARCH parameter (response to recent shocks)
+$\alpha \geq 0$: ARCH parameter (response to recent shocks)
 
-$`\beta \geq 0`$: GARCH parameter (volatility persistence)
+$\beta \geq 0$: GARCH parameter (volatility persistence)
 
-$`\alpha + \beta < 1`$: Stationarity condition
+$\alpha + \beta < 1$: Stationarity condition
 
-$`\alpha + \beta \approx 1`$ Indicates highly persistent volatility.
+$\alpha + \beta \approx 1$ Indicates highly persistent volatility.
 
-Model adequacy was verified through ACF/PACF plots of squared residuals and Information criteria (AIC, BIC) for model selection
+Model adequacy was verified through ACF plots of squared residuals and Information criteria (AIC, BIC) for model selection
 
 3.3.2 Rolling Window Analysis
 
@@ -485,7 +487,7 @@ For volatility specifically:
 Rolling\ volatility = \ \sqrt{\frac{1}{w - 1}\sum_{i = t - w + 1}^{t}{(r_{i} - {\overline{r}}_{w})}^{2}}
 ```
 
-Where w = 5 years rolling window and $`{\overline{r}}_{w}\ is\ the\ window\ mean`$
+Where w = 5 years rolling window and ${\overline{r}}_{w}\ is\ the\ window\ mean$
 
 ### 3.3.2 Dynamic Conditional Correlation Analysis
 
@@ -515,15 +517,15 @@ Three complementary panel models were estimated to examine determinants of expor
 
 Model 1: Total Export Determinants
 
-$`\log\left( {TotalExports}_{it} \right) = \beta_{0} + \beta_{1}\ {log(GDP}_{it}) + \beta_{2}\ {log(ExchRate}_{it}) + \beta_{3}\ {log(GDPpc}_{it}) + \beta_{4}\ {Inflation}_{it} + \beta_{5}\ {TradeOpenness}_{it} + \alpha_{i} + \epsilon_{it})`$
+$\log\left( {TotalExports}_{it} \right) = \beta_{0} + \beta_{1}\ {log(GDP}_{it}) + \beta_{2}\ {log(ExchRate}_{it}) + \beta_{3}\ {log(GDPpc}_{it}) + \beta_{4}\ {Inflation}_{it} + \beta_{5}\ {TradeOpenness}_{it} + \alpha_{i} + \epsilon_{it})$
 
 Model 2: Goods Export Determinants
 
-$`\log(GoodsExports) = \beta_{0} + \beta_{1}\ {log(GDP}_{it}) + \beta_{2}\ {FXVolatility}_{it} + \beta_{3}\ {log(GDPpc}_{it}) + \beta_{4}\ {Inflation}_{it} + \beta_{5}\ {TradeOpenness}_{it} + \alpha_{i} + \epsilon_{it})`$
+$\log(GoodsExports) = \beta_{0} + \beta_{1}\ {log(GDP}_{it}) + \beta_{2}\ {FXVolatility}_{it} + \beta_{3}\ {log(GDPpc}_{it}) + \beta_{4}\ {Inflation}_{it} + \beta_{5}\ {TradeOpenness}_{it} + \alpha_{i} + \epsilon_{it})$
 
 Model 3: Service Export Determinants
 
-$`\log(ServiceExports) = \beta_{0} + \beta_{1}\ {log(GDP}_{it}) + \beta_{2}\ {FXVolatility}_{it} + \beta_{3}\ {log(GDPpc}_{it}) + \beta_{4}\ {Inflation}_{it} + \beta_{5}\ {TradeOpenness}_{it} + \alpha_{i} + \epsilon_{it})`$
+$\log(ServiceExports) = \beta_{0} + \beta_{1}\ {log(GDP}_{it}) + \beta_{2}\ {FXVolatility}_{it} + \beta_{3}\ {log(GDPpc}_{it}) + \beta_{4}\ {Inflation}_{it} + \beta_{5}\ {TradeOpenness}_{it} + \alpha_{i} + \epsilon_{it})$
 
 where:
 
@@ -538,7 +540,7 @@ All models include annual time dummies to control for global shocks. By includin
 1\. Proportional Growth Analysis: Trade-GDP growth differentials by:
 
 ```math
-{Gap}_{i,t} = {TradeGrowth}_{i,t} - {GDPGrowth}_{I,T}
+{Gap}_{i,t} = {TradeGrowth}_{i,t} - {GDPGrowth}_{i,t}
 ```
 
 Aggregated globally and by income group.
